@@ -46,7 +46,3 @@ playButton.addEventListener('click', () => {
   const videoSrc = video.src;
   video.src = videoSrc + "&autoplay=1"; // Ajoute le paramètre autoplay
 });
-
-
-
-

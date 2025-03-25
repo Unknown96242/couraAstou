@@ -32,6 +32,7 @@
                 </div>
             </div>
         </div>
+        <header>
             <main class="flex-shrink-0">
                 <!-- Navigation-->
                 <div id="tete">
@@ -41,24 +42,35 @@
                     <nav class="navbar navbar-expand-lg ">
                         <div class="container pp">
                             <a class="navbar-brand " id="logo" href="index.html">CouraAstou</a>
-                            <div id="navbarSupportedContent">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarContent" >
                                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                                     <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
                                     <li class="nav-item"><a class="nav-link" href="boutique.html">Boutique</a></li>
                                     <li class="nav-item"><a class="nav-link" href="notre-concept.html">Notre Concept</a></li>
                                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                                 </ul>
+                                    <div class="search-container d-flex align-items-center icons">
+                                        <!-- Icône de recherche (visible par défaut) -->
+                                        <a class="btn btn-link search-icon" id="searchToggle">
+                                            <img src="assets/search-heart.svg" alt="">
+                                        </a>
+                                        
+                                        <!-- Champ de recherche (caché par défaut) -->
+                                        <input type="text" class="form-control search-input me-2" placeholder="Rechercher...">
+                                        
+                                        <!-- Icône panier -->
+                                        <a href="#" id="cart-link"><img src="assets/bag-heart-fill.svg" alt=""></a>
+                                    </div>
                             </div>
-                            <div class="icons d-flex justify-content-between">
-                                <a href=""><img src="assets/search-heart.svg" alt=""></a>
-                                <a href="#" id="cart-link"><img src="assets/bag-heart-fill.svg" alt="" ></a>
-                            </div>
+                            
                         </div>
                     </nav>
-                    <!-- Header-->
-                    
                 </div>
             </main>
+        </header>
             <!-- Page Content-->
             <section class="py-5">
                 <div class="container px-5 my-5">
@@ -254,5 +266,6 @@
         <!-- Core theme JS-->    
         <script src="js/boutiqueScript.js"></script>
         <script src="js/panier.js"></script>
+        <script src="js/scroll.js"></script>
     </body>
 </html>

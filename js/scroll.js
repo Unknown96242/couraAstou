@@ -43,3 +43,37 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
     
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchToggle = document.getElementById('searchToggle');
+    const searchContainer = document.querySelector('.search-container');
+    const searchInput = document.querySelector('.search-input');
+    
+    searchToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        if (window.innerWidth > 991.98) {
+            // Comportement desktop
+            searchContainer.classList.toggle('search-active');
+        } else {
+            // Comportement mobile
+            searchContainer.classList.toggle('search-active-mobile');
+        }
+        
+        // Focus sur l'input quand il apparaît
+        if (searchContainer.classList.contains('search-active') || 
+            searchContainer.classList.contains('search-active-mobile')) {
+            searchInput.focus();
+        }
+    });
+    
+    // Fermer la recherche si on clique ailleurs (mobile)
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 991.98 && 
+            !searchContainer.contains(e.target) && 
+            !e.target.classList.contains('search-icon')) {
+            searchContainer.classList.remove('search-active-mobile');
+        }
+    });
+  });

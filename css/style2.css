@@ -229,6 +229,29 @@ a {
 
 /*=============== HEADER ===============*/
 
+/* Animation fluide pour la transition */
+.search-container {
+  transition: all 0.3s ease;
+}
+/* Masquer l'input par défaut */
+.search-input {
+  width: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+/* Classe active pour montrer l'input */
+.search-active .search-input {
+  width: 200px;
+  opacity: 1;
+}
+/* Comportement mobile */
+@media (max-width: 991.98px) {
+  .search-active-mobile .search-input {
+      width: 100%;
+      opacity: 1;
+  }
+}
+
 #tete{
   background: linear-gradient(to bottom, #dfcea3, #ddc48658, #ffffff ) ;
   color: #046307;
@@ -249,7 +272,7 @@ a {
   justify-content: space-between;
 }
 .icons a{
-  margin-left: 40px;
+  /* margin-right: 40px; */
   font-size: x-large;
 }
 .icons a img{
@@ -269,6 +292,9 @@ a {
   font-size: xx-large;
   font-weight: bold;
   width: 45%;
+}
+#navbarContent ul li {
+ margin-right: 12px;
 }
 .a-la-une{
   height: 500px;

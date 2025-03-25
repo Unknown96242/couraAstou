@@ -1,3 +1,6 @@
+  
+  
+  
   #scroll-target{
     background-color: #dfcea3c7;
     /* color: #fff; */
@@ -159,4 +162,49 @@
 .nav-menu.active {
   display: block;
 }
-  
+
+.wrapper {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+.images {
+  display: flex;
+  position: relative;
+}
+.img-1, .img-2 {
+  width: 100%;
+  height: 400px; /* Ajustez selon vos besoins */
+  background-size: cover;
+  background-position: center;
+}
+.slider {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Animation fluide pour la transition */
+.search-container {
+  transition: all 0.3s ease;
+}
+/* Masquer l'input par défaut */
+.search-input {
+  width: 0;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+/* Classe active pour montrer l'input */
+.search-active .search-input {
+  width: 200px;
+  opacity: 1;
+}
+/* Comportement mobile */
+@media (max-width: 991.98px) {
+  .search-active-mobile .search-input {
+      width: 100%;
+      opacity: 1;
+  }
+}
