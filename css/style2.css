@@ -288,10 +288,7 @@ a {
   background-image: url(../assets/img/slogan.jpg);
 }
 .text-slogan{
-  bottom: 30px;
-  font-size: xx-large;
-  font-weight: bold;
-  width: 45%;
+  background-color: rgba(48, 47, 47, 0.276);  
 }
 #navbarContent ul li {
  margin-right: 12px;
@@ -336,12 +333,15 @@ a {
 
   
 /*=============== CARD ===============*/
- 
+ .vente-record{
+  color: #046307;
+  padding: 50px 4px 0 10px;
+}
+
 .card-containainer-body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   position: relative;
 }
 
