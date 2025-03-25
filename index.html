@@ -43,40 +43,51 @@
                     <nav class="navbar navbar-expand-lg ">
                         <div class="container pp">
                             <a class="navbar-brand " id="logo" href="index.html">CouraAstou</a>
-                            <div id="navbarSupportedContent">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarContent" >
                                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                                     <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
                                     <li class="nav-item"><a class="nav-link" href="boutique.html">Boutique</a></li>
                                     <li class="nav-item"><a class="nav-link" href="notre-concept.html">Notre Concept</a></li>
                                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                                 </ul>
+                                    <div class="search-container d-flex align-items-center icons">
+                                        <!-- Icône de recherche (visible par défaut) -->
+                                        <a class="btn btn-link search-icon" id="searchToggle">
+                                            <img src="assets/search-heart.svg" alt="">
+                                        </a>
+                                        
+                                        <!-- Champ de recherche (caché par défaut) -->
+                                        <input type="text" class="form-control search-input me-2" placeholder="Rechercher...">
+                                        
+                                        <!-- Icône panier -->
+                                        <a href="#" id="cart-link"><img src="assets/bag-heart-fill.svg" alt=""></a>
+                                    </div>
                             </div>
-                            <div class="icons d-flex justify-content-between">
-                                <a href=""><img src="assets/search-heart.svg" alt=""></a>
-                                <a href="#" id="cart-link"><img src="assets/bag-heart-fill.svg" alt=""></a>
-                            </div>
+                            
                         </div>
                     </nav>
                     <!-- Header-->
                     <div class="container paysage slogan  rounded-4 position-relative">
-                        <div class="container text-white px-5 position-absolute text-slogan ">
+                        <div class=" position-absolute top-50 start-50 translate-middle text-center text-white w-50 text-white px-5 text-slogan ">
                             <div class="animate-on-scroll animate-on-scroll--card">
                                 <p>Votre plus belle experience religieuse vivez la avec nous</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            
             </main>
         </header>
             <!-- Features section-->
             <section class="py-5" id="features">
-                <div class="container px-5 my-5 features">
-                    <div class="d-flex justify-content-between gx-5">
-                        <div class="a-la-une rounded-4 animate-on-scroll animate-on-scroll--card">
-                            <img src="assets/img/planner.webp" alt="">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 mb-4 mb-md-0 a-la-une  animate-on-scroll animate-on-scroll--card">
+                            <img src="assets/img/planner.webp" alt="Planner" class="img-fluid rounded-3 shadow">
                         </div>
-                        <div class="mx-4 d-flex justify-content-center align-items-center">
+                        <div class="col-md-6">
                             <div class=" mb-5 mb-lg-0 animate-on-scroll animate-on-scroll--cta">
                                 <div class="col-lg-7">
                                     <h2 class="fw-bolder fs-1 mb-0">Article le plus vendu en ce mois saint</h2>
@@ -651,21 +662,21 @@
             </section>
             <section>
                 <div class="container px-5 my-5 features">
-                    <div class="d-flex justify-content-between">
-                        <div class="d-flex justify-content-center align-items-center animate-on-scroll animate-on-scroll--cta">
-                            <div class="col-lg-7 mb-5 mb-lg-0 text-center">
-                                <div class="pub mt-4">
-                                    <p class=" fw-bold fs-1">Pour decouvrir plus de nos articles, visitez notre </p>
-                                </div>
-                                <div class="mt-4">
+                    <div class="row">
+                        <div class="col-md-6 order-1 order-md-1 mb-4 mb-md-0 animate-on-scroll animate-on-scroll--cta">
+                            <div class="col-lg-7 mb-5 mb-lg-0 ">
+                                <div class="text-center  text-md-start pub mt-4">
+                                    <h2 class=" fw-bold fs-1">Pour decouvrir plus de nos articles </h2>
+                                    <p class="lead mb-4">visitez notre en ligne</p>
                                     <a href="boutique.html" class="text-white">
                                         <span class="promo rounded-4 px-4 py-3">Boutique</span>
                                     </a>
                                 </div>
+                    
                             </div>
                         </div>
-                        <div class="a-la-une rounded-4 animate-on-scroll animate-on-scroll--card">
-                            <img src="assets/img/bg-boutique-plus.jpg" alt="">
+                        <div class="col-md-6 order-2 order-md-2  animate-on-scroll animate-on-scroll--card">
+                            <img src="assets/img/bg-boutique-plus.jpg" alt="" class="img-fluid rounded-3 shadow">
                         </div>
                     </div>
                 </div>
