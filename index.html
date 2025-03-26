@@ -63,7 +63,12 @@
                                         <input type="text" class="form-control search-input me-2" placeholder="Rechercher...">
                                         
                                         <!-- Icône panier -->
-                                        <a href="#" id="cart-link"><img src="assets/bag-heart-fill.svg" alt=""></a>
+                                        <a href="#" id="cart-link" class="btn btn-outline-success position-relative">
+                                            <i class="bi bi-bag-heart-fill"></i>
+                                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                                0
+                                            </span>
+                                        </a>                                   
                                     </div>
                             </div>
                             
@@ -691,11 +696,13 @@
                     </div>
                 </div>
             </div>
-            <div class="fixed-logo d-flex flex-column bg-tranparent">
-                <a href=""><img src="assets/facebook.png" alt=""></a>
-                <a href=""><img src="assets/instagram.png" alt=""></a>
-                <a href=""><img src="assets/tiktok.svg" alt=""></a>
-                <a href=""><img src="assets/whatsapp.png" alt=""></a>
+            <div class="position-fixed bottom-0 end-0 p-3 icons" style="z-index: 11 ">
+                <div class="d-flex flex-column bg-tranparent">
+                    <a href="#" class="btn  btn-floating m-1"><img src="assets/facebook.png" alt=""></a>
+                    <a href="#" class="btn  btn-floating m-1 "><img src="assets/instagram.png" alt=""></a>
+                    <a href="#" class="btn  btn-floating m-1 "><img src="assets/tiktok.svg" alt=""></a>
+                    <a href="#" class="btn  btn-floating m-1 "><img src="assets/whatsapp.png" alt=""></a>
+                </div>
             </div>
         </footer>
         <!-- Bootstrap core JS-->

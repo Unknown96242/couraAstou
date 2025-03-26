@@ -880,16 +880,24 @@ footer, footer a{
 }
 
 /* Fenêtre contextuelle du panier */
+
 .cart-sidebar {
   position: fixed;
   top: 0;
-  right: -33.33%; /* Caché par défaut */
-  width: 33.33%;
+  right: -75%; /* Caché par défaut */
+  width: 75%;
   height: 100%;
   background-color: #fff;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
   transition: right 0.3s ease;
-}
+  }
+
+  @media (min-width: 992px) { /* lg */
+    .cart-sidebar{
+      right: -45%; /* Caché par défaut */
+      width: 45%;
+    }
+  }
 
 /* Quand le panier est ouvert */
 .cart-overlay.active {
@@ -939,8 +947,22 @@ footer, footer a{
 .contact-form {
   background-image: url(../assets/img/contact.png);
   background-size: cover;
+  background-position: top center;
   background-repeat: no-repeat;
 }
+
+.contact-form{
+  background-image: url('../assets/img/contact-mobile.png');
+}
+
+/* Breakpoints Bootstrap */
+
+@media (min-width: 992px) { /* lg */
+  .contact-form{
+    background-image: url('../assets/img/contact.png');
+  }
+}
+
 .contact-form input, .contact-form textarea {
   background-color: rgba(255, 255, 255, 0.306);
   border: none;
