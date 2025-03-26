@@ -156,7 +156,7 @@
                                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Par Type</a>
                                             <ul class="dropdown-menu text-dark" aria-labelledby="navbarDropdown">
                                                 <li><hr class="dropdown-divider" /></li>
-                                                <li><a class="text-dark m-2" href="#!">Livre</a></li>
+                                                <li><a class="text-dark m-2" href="#!">Livres</a></li>
                                                 <li><a class="text-dark m-2" href="#!">Foulard</a></li>
                                                 <li><a class="text-dark m-2" href="#!">Sandales</a></li>
                                                 <li><a class="text-dark m-2" href="#!">Hijab</a></li>
@@ -453,35 +453,6 @@
         <script src="js/boutiqueScript.js"></script>
         <script src="js/panier.js"></script>
         <script src="js/scroll.js"></script>
-        <script>
-            // Configuration de l'Observer
-            const lazyBgObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const bgUrl = entry.target.getAttribute('data-bg');
-                        entry.target.style.backgroundImage = bgUrl;
-                        
-                        // Option : Effet de fondu progressif
-                        entry.target.style.opacity = '0';
-                        let opacity = 0;
-                        const fadeIn = setInterval(() => {
-                            opacity += 0.05;
-                            entry.target.style.opacity = opacity;
-                            if (opacity >= 1) clearInterval(fadeIn);
-                        }, 20);
-                        
-                        lazyBgObserver.unobserve(entry.target);
-                    }
-                });
-            }, { 
-                rootMargin: '200px', // Déclenchement 200px avant l'élément
-                threshold: 0.1 
-            });
-    
-            // Application à tous les éléments
-            document.querySelectorAll('.lazy-bg').forEach(el => {
-                lazyBgObserver.observe(el);
-            });
-            </script>
+        <script src="js/lazy-loading.js"></script>
     </body>
 </html>

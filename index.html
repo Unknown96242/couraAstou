@@ -668,7 +668,7 @@
                             <div class="col-lg-7 mb-5 mb-lg-0 ">
                                 <div class="text-center  text-md-start pub mt-4">
                                     <h2 class=" fw-bold fs-1">Pour decouvrir plus de nos articles </h2>
-                                    <p class="lead mb-4">visitez notre en ligne</p>
+                                    <p class="lead mb-4">visitez notre boutique en ligne</p>
                                     <a href="boutique.html" class="text-white">
                                         <span class="promo rounded-4 px-4 py-3">Boutique</span>
                                     </a>
@@ -718,36 +718,7 @@
         <script src="js/scripts.js"></script>
         <script src="js/panier.js"></script>
         <script src="js/scroll.js"></script>
-        <script>
-        // Configuration de l'Observer
-        const lazyBgObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const bgUrl = entry.target.getAttribute('data-bg');
-                    entry.target.style.backgroundImage = bgUrl;
-                    
-                    // Option : Effet de fondu progressif
-                    entry.target.style.opacity = '0';
-                    let opacity = 0;
-                    const fadeIn = setInterval(() => {
-                        opacity += 0.05;
-                        entry.target.style.opacity = opacity;
-                        if (opacity >= 1) clearInterval(fadeIn);
-                    }, 20);
-                    
-                    lazyBgObserver.unobserve(entry.target);
-                }
-            });
-        }, { 
-            rootMargin: '200px', // Déclenchement 200px avant l'élément
-            threshold: 0.1 
-        });
-
-        // Application à tous les éléments
-        document.querySelectorAll('.lazy-bg').forEach(el => {
-            lazyBgObserver.observe(el);
-        });
-        </script>
+        <script src="js/lazy-loading.js"></script>
     </body>
 </html>
 
