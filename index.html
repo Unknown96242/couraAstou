@@ -56,26 +56,33 @@
                                     <div class="search-container d-flex align-items-center icons">
                                         <!-- Icône de recherche (visible par défaut) -->
                                         <a class="btn btn-link search-icon" id="searchToggle">
-                                            <img src="assets/search-heart.svg" alt="">
+                                            <img loading="lazy" src="assets/search-heart.svg" loading="lazy" alt="">
                                         </a>
                                         
                                         <!-- Champ de recherche (caché par défaut) -->
                                         <input type="text" class="form-control search-input me-2" placeholder="Rechercher...">
                                         
                                         <!-- Icône panier -->
-                                        <a href="#" id="cart-link"><img src="assets/bag-heart-fill.svg" alt=""></a>
+                                        <a href="#" id="cart-link" class="btn btn-outline-success position-relative">
+                                            <i class="bi bi-bag-heart-fill"></i>
+                                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                                0
+                                            </span>
+                                        </a>                                   
                                     </div>
                             </div>
                             
                         </div>
                     </nav>
                     <!-- Header-->
+                    <div class="lazy-bg" data-bg="url(assets/img/slogan.jpg)" style="aspect-ratio: 16/9;">
                     <div class="container paysage slogan  rounded-3 position-relative ">
                         <div class=" position-absolute bottom-0 start-50 translate-middle text-center text-white w-70 text-white px-5 text-slogan rounded-3">
                             <div class="animate-on-scroll animate-on-scroll--card">
                                 <h1>Votre plus belle experience religieuse vivez la avec nous</h1>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </main>
@@ -85,7 +92,7 @@
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-md-6 mb-4 mb-md-0 a-la-une  animate-on-scroll animate-on-scroll--card">
-                            <img src="assets/img/planner.webp" alt="Planner" class="img-fluid rounded-3 shadow">
+                            <img loading="lazy" src="assets/img/planner.webp" alt="Planner" class="img-fluid rounded-3 shadow">
                         </div>
                         <div class="col-md-6">
                             <div class=" mb-5 mb-lg-0 animate-on-scroll animate-on-scroll--cta">
@@ -123,7 +130,7 @@
                             <div class="text-center">
                                 <div class="fs-4 mb-4 fst-italic">"Celui qui étudie le Coran et le médite obtient la compréhension profonde de la religion."</div>
                                 <div class="d-flex align-items-center justify-content-center">
-                                    <img class="rounded-circle me-3" src="assets/img/Abdullah-Ibn-Abbas.jpeg" id="citation-img" alt="..." />
+                                    <img loading="lazy" class="rounded-circle me-3" src="assets/img/Abdullah-Ibn-Abbas.jpeg" id="citation-img" alt="..." />
                                     <div class="fw-bold citation-nom">
                                         Abdullah Ibn Abbas 
                                         <span class="fw-bold text-primary mx-1">/</span>
@@ -151,7 +158,7 @@
                                     <div class="swiper-wrapper">
                                         <article class="card__article swiper-slide animate-on-scroll animate-on-scroll--card">
                                             <div class="card__image">
-                                                <img src="assets/img/carte1-avant.webp" alt="image" class="card__img">
+                                                <img loading="lazy" src="assets/img/carte1-avant.webp" alt="image" class="card__img">
                                                 <div class="card__shadow"></div>
                                             </div>
                                             <div class="card__data">
@@ -166,7 +173,7 @@
                             
                                         <article class="card__article swiper-slide"animate-on-scroll animate-on-scroll--cta>
                                             <div class="card__image">
-                                            <img src="assets/img/carte2-avant.webp" alt="image" class="card__img">
+                                            <img loading="lazy" src="assets/img/carte2-avant.webp" alt="image" class="card__img">
                                             <div class="card__shadow"></div>
                                             </div>
                             
@@ -183,7 +190,7 @@
                                         
                                         <article class="card__article swiper-slide animate-on-scroll animate-on-scroll--cta">
                                             <div class="card__image">
-                                            <img src="assets/img/carte3-avant.webp" alt="image" class="card__img">
+                                            <img loading="lazy" src="assets/img/carte3-avant.webp" alt="image" class="card__img">
                                             <div class="card__shadow"></div>
                                             </div>
                             
@@ -200,7 +207,7 @@
                                           
                                         <article class="card__article swiper-slide animate-on-scroll animate-on-scroll--cta">
                                             <div class="card__image">
-                                            <img src="assets/img/carte4-avant.webp" alt="image" class="card__img">
+                                            <img loading="lazy" src="assets/img/carte4-avant.webp" alt="image" class="card__img">
                                             <div class="card__shadow"></div>
                                             </div>
                             
@@ -216,7 +223,7 @@
                     
                                         <article class="card__article swiper-slide animate-on-scroll animate-on-scroll--cta">
                                             <div class="card__image">
-                                            <img src="assets/img/carte3.webp" alt="image" class="card__img">
+                                            <img loading="lazy" src="assets/img/carte3.webp" alt="image" class="card__img">
                                             <div class="card__shadow"></div>
                                             </div>
                             
@@ -253,13 +260,13 @@
                     <div class="container ">
                         <div class="video-container position-relative rounded-4 overflow-hidden" style="padding-top: 56.25%;"> <!-- 16:9 Aspect Ratio -->
                           <!-- Image figée en fond -->
-                          <img src="assets/img/ramadan-planner.webp" alt="Image de fond" class="video-thumbnail position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;" />
+                          <img loading="lazy" src="assets/img/ramadan-planner.webp" alt="Image de fond" class="video-thumbnail position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;" />
                           
                           <!-- Bouton Play avec animation -->
                           <div class="play-overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center bg-dark bg-opacity-50">
                             <button class="play-button bg-transparent border-0 text-white animate-on-scroll animate-on-scroll--cta">
                               
-                                <img src="assets/play-fill.svg" alt="" class="play-icon fs-1">
+                                <img loading="lazy" src="assets/play-fill.svg" alt="" class="play-icon fs-1">
 
                               <span class="wave-animation position-absolute top-50 start-50 translate-middle"></span> <!-- Animation d'onde -->
                             </button>
@@ -280,7 +287,7 @@
                             <div class="col mb-5 animate-on-scroll animate-on-scroll--card">
                                 <div class="card h-100">
                                     <!-- Product image-->
-                                    <img class="card-img-top" src="assets/img/carte1.webp" alt="..." />
+                                    <img loading="lazy" class="card-img-top" src="assets/img/carte1.webp" alt="..." />
                                     <!-- Product details-->
                                     <div class="card-body p-4">
                                         <div class="text-center">
@@ -301,7 +308,7 @@
                                     <!-- solde badge-->
                                     <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">solde</div>
                                     <!-- Product image-->
-                                    <img class="card-img-top" src="assets/img/carte2.webp" alt="..." />
+                                    <img loading="lazy" class="card-img-top" src="assets/img/carte2.webp" alt="..." />
                                     <!-- Product details-->
                                     <div class="card-body p-4">
                                         <div class="text-center">
@@ -331,7 +338,7 @@
                                     <!-- solde badge-->
                                     <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">solde</div>
                                     <!-- Product image-->
-                                    <img class="card-img-top" src="assets/img/carte3.webp" alt="..." />
+                                    <img loading="lazy" class="card-img-top" src="assets/img/carte3.webp" alt="..." />
                                     <!-- Product details-->
                                     <div class="card-body p-4">
                                         <div class="text-center">
@@ -351,7 +358,7 @@
                             <div class="col mb-5 animate-on-scroll animate-on-scroll--card">
                                 <div class="card h-100">
                                     <!-- Product image-->
-                                    <img class="card-img-top" src="assets/img/carte4-avant.webp" alt="..." />
+                                    <img loading="lazy" class="card-img-top" src="assets/img/carte4-avant.webp" alt="..." />
                                     <!-- Product details-->
                                     <div class="card-body p-4">
                                         <div class="text-center">
@@ -380,7 +387,7 @@
                                     <!-- solde badge-->
                                     <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">solde</div>
                                     <!-- Product image-->
-                                    <img class="card-img-top" src="assets/img/carte1-avant.webp" alt="..." />
+                                    <img loading="lazy" class="card-img-top" src="assets/img/carte1-avant.webp" alt="..." />
                                     <!-- Product details-->
                                     <div class="card-body p-4">
                                         <div class="text-center">
@@ -400,7 +407,7 @@
                             <div class="col mb-5 animate-on-scroll animate-on-scroll--card">
                                 <div class="card h-100">
                                     <!-- Product image-->
-                                    <img class="card-img-top" src="assets/img/carte2-avant.webp" alt="..." />
+                                    <img loading="lazy" class="card-img-top" src="assets/img/carte2-avant.webp" alt="..." />
                                     <!-- Product details-->
                                     <div class="card-body p-4">
                                         <div class="text-center">
@@ -421,7 +428,7 @@
                                     <!-- solde badge-->
                                     <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">solde</div>
                                     <!-- Product image-->
-                                    <img class="card-img-top" src="assets/img/carte3-avant.webp" alt="..." />
+                                    <img loading="lazy" class="card-img-top" src="assets/img/carte3-avant.webp" alt="..." />
                                     <!-- Product details-->
                                     <div class="card-body p-4">
                                         <div class="text-center">
@@ -449,7 +456,7 @@
                             <div class="col mb-5 animate-on-scroll animate-on-scroll--card">
                                 <div class="card h-100">
                                     <!-- Product image-->
-                                    <img class="card-img-top" src="assets/img/365.webp" alt="..." />
+                                    <img loading="lazy" class="card-img-top" src="assets/img/365.webp" alt="..." />
                                     <!-- Product details-->
                                     <div class="card-body p-4">
                                         <div class="text-center">
@@ -488,7 +495,7 @@
                             <!-- Slide-start -->
                             <div class="swiper-slide tranding-slide">
                               <div class="tranding-slide-img">
-                                <img src="assets/img/styl-1.webp" alt="Tranding">
+                                <img loading="lazy" src="assets/img/styl-1.webp" alt="Tranding">
                               </div>
                               <div class="tranding-slide-content">
                                 <h1 class="style-price">$20</h1>
@@ -510,7 +517,7 @@
                             <!-- Slide-start -->
                             <div class="swiper-slide tranding-slide">
                               <div class="tranding-slide-img">
-                                <img src="assets/img/style-2.webp" alt="Tranding">
+                                <img loading="lazy" src="assets/img/style-2.webp" alt="Tranding">
                               </div>
                               <div class="tranding-slide-content">
                                 <h1 class="style-price">$20</h1>
@@ -532,7 +539,7 @@
                             <!-- Slide-start -->
                             <div class="swiper-slide tranding-slide">
                               <div class="tranding-slide-img">
-                                <img src="assets/img/style-3.webp" alt="Tranding">
+                                <img loading="lazy" src="assets/img/style-3.webp" alt="Tranding">
                               </div>
                               <div class="tranding-slide-content">
                                 <h1 class="style-price">$40</h1>
@@ -554,7 +561,7 @@
                             <!-- Slide-start -->
                             <div class="swiper-slide tranding-slide">
                               <div class="tranding-slide-img">
-                                <img src="assets/img/style-4.webp" alt="Tranding">
+                                <img loading="lazy" src="assets/img/style-4.webp" alt="Tranding">
                               </div>
                               <div class="tranding-slide-content">
                                 <h1 class="style-price">$15</h1>
@@ -576,7 +583,7 @@
                             <!-- Slide-start -->
                             <div class="swiper-slide tranding-slide">
                               <div class="tranding-slide-img">
-                                <img src="assets/img/style-5.webp" alt="Tranding">
+                                <img loading="lazy" src="assets/img/style-5.webp" alt="Tranding">
                               </div>
                               <div class="tranding-slide-content">
                                 <h1 class="style-price">$15</h1>
@@ -598,7 +605,7 @@
                             <!-- Slide-start -->
                             <div class="swiper-slide tranding-slide">
                               <div class="tranding-slide-img">
-                                <img src="assets/img/style-6.webp" alt="Tranding">
+                                <img loading="lazy" src="assets/img/style-6.webp" alt="Tranding">
                               </div>
                               <div class="tranding-slide-content">
                                 <h1 class="style-price">$20</h1>
@@ -620,7 +627,7 @@
                             <!-- Slide-start -->
                             <div class="swiper-slide tranding-slide">
                               <div class="tranding-slide-img">
-                                <img src="assets/img/style-7.webp" alt="Tranding">
+                                <img loading="lazy" src="assets/img/style-7.webp" alt="Tranding">
                               </div>
                               <div class="tranding-slide-content">
                                 <h1 class="style-price">$8</h1>
@@ -670,7 +677,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 order-2 order-md-2  animate-on-scroll animate-on-scroll--card">
-                            <img src="assets/img/bg-boutique-plus.jpg" alt="" class="img-fluid rounded-3 shadow">
+                            <img loading="lazy" src="assets/img/bg-boutique-plus.jpg" alt="" class="img-fluid rounded-3 shadow">
                         </div>
                     </div>
                 </div>
@@ -691,11 +698,13 @@
                     </div>
                 </div>
             </div>
-            <div class="fixed-logo d-flex flex-column bg-tranparent">
-                <a href=""><img src="assets/facebook.png" alt=""></a>
-                <a href=""><img src="assets/instagram.png" alt=""></a>
-                <a href=""><img src="assets/tiktok.svg" alt=""></a>
-                <a href=""><img src="assets/whatsapp.png" alt=""></a>
+            <div class="position-fixed bottom-0 end-0 p-3 icons" style="z-index: 11 ">
+                <div class="d-flex flex-column bg-tranparent">
+                    <a href="#" class="btn  btn-floating m-1"><img loading="lazy" src="assets/facebook.png" alt=""></a>
+                    <a href="#" class="btn  btn-floating m-1 "><img loading="lazy" src="assets/instagram.png" alt=""></a>
+                    <a href="#" class="btn  btn-floating m-1 "><img loading="lazy" src="assets/tiktok.svg" alt=""></a>
+                    <a href="#" class="btn  btn-floating m-1 "><img loading="lazy" src="assets/whatsapp.png" alt=""></a>
+                </div>
             </div>
         </footer>
         <!-- Bootstrap core JS-->
@@ -709,6 +718,36 @@
         <script src="js/scripts.js"></script>
         <script src="js/panier.js"></script>
         <script src="js/scroll.js"></script>
+        <script>
+        // Configuration de l'Observer
+        const lazyBgObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bgUrl = entry.target.getAttribute('data-bg');
+                    entry.target.style.backgroundImage = bgUrl;
+                    
+                    // Option : Effet de fondu progressif
+                    entry.target.style.opacity = '0';
+                    let opacity = 0;
+                    const fadeIn = setInterval(() => {
+                        opacity += 0.05;
+                        entry.target.style.opacity = opacity;
+                        if (opacity >= 1) clearInterval(fadeIn);
+                    }, 20);
+                    
+                    lazyBgObserver.unobserve(entry.target);
+                }
+            });
+        }, { 
+            rootMargin: '200px', // Déclenchement 200px avant l'élément
+            threshold: 0.1 
+        });
+
+        // Application à tous les éléments
+        document.querySelectorAll('.lazy-bg').forEach(el => {
+            lazyBgObserver.observe(el);
+        });
+        </script>
     </body>
 </html>
 

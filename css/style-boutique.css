@@ -23,7 +23,7 @@
   .wrapper .images .img-1{
     height: 100%;
     width: 100%;
-    background: url("../assets/img/family-2.jpg") no-repeat ;
+    background:  no-repeat ;
     background-size: cover;
     /* background: url("images/car.jpg") no-repeat; */
   }
@@ -32,7 +32,7 @@
     height: 100%;
     width: 50%;
     /* filter: blur(5px); */
-    background: url("../assets/img/fammille-2.jpg") no-repeat ;
+    background:  no-repeat ;
     background-size: cover;
     /* background: url("images/car.png") no-repeat; */
   }

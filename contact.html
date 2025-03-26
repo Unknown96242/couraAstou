@@ -55,14 +55,18 @@
                                     <div class="search-container d-flex align-items-center icons">
                                         <!-- Icône de recherche (visible par défaut) -->
                                         <a class="btn btn-link search-icon" id="searchToggle">
-                                            <img src="assets/search-heart.svg" alt="">
+                                            <img loading="lazy" src="assets/search-heart.svg" alt="">
                                         </a>
                                         
                                         <!-- Champ de recherche (caché par défaut) -->
                                         <input type="text" class="form-control search-input me-2" placeholder="Rechercher...">
-                                        
                                         <!-- Icône panier -->
-                                        <a href="#" id="cart-link"><img src="assets/bag-heart-fill.svg" alt=""></a>
+                                        <a href="#" id="cart-link" class="btn btn-outline-success position-relative">
+                                            <i class="bi bi-bag-heart-fill"></i>
+                                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                                0
+                                            </span>
+                                        </a>
                                     </div>
                             </div>
                             
@@ -132,34 +136,46 @@
                         </div>
                     </div>
                     <!-- Contact cards-->
-                    <div class="  d-flex justify-content-between gx-5 py-5">
-                        <div class="col text-center m-3 animate-on-scroll animate-on-scroll--card">
-                            <div class="feature mb-3">
-                                <svg fill="none" focusable="false" width="24" height="24" class="icon icon--picto-customer-support   " viewBox="0 0 24 24">
-                                    <path d="M4.00571 10C4.00571 10 3.50018 2 12 2C20.4997 2 19.9943 10 19.9943 10M4.00571 10C3.33714 10.3333 2 11 2 12.5C2 14 3 15 4.00571 15C4.81028 15 5.67048 15 6 15V10H4.00571ZM19.9943 10C20.6629 10.1667 22 10.9 22 12.5C22 14.1 20.6629 14.8333 19.9943 15M19.9943 10H18V15H19.9943M19.9943 15C20.1629 16.5 19.6 19.5 16 19.5M16 19.5C16 19 15.8 18 15 18C14.2 18 13 18 12.5 18C12 18 10.8 18 10 18C9.2 18 9 19 9 19.5C9 20 9.2 21 10 21C10.8 21 12 21 12.5 21H15C15.8125 21 16 20 16 19.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
+                    <div class="row gx-5 py-5">
+                        <div class="col-md-4 mb-4 mb-md-0 animate-on-scroll animate-on-scroll--card">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body text-center p-4 p-lg-5">
+                                    <div class="feature bg-gradient text-primary rounded-3 mb-4 p-3 d-inline-block">
+                                        <svg fill="none" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+                                            <path d="M4.00571 10C4.00571 10 3.50018 2 12 2C20.4997 2 19.9943 10 19.9943 10M4.00571 10C3.33714 10.3333 2 11 2 12.5C2 14 3 15 4.00571 15C4.81028 15 5.67048 15 6 15V10H4.00571ZM19.9943 10C20.6629 10.1667 22 10.9 22 12.5C22 14.1 20.6629 14.8333 19.9943 15M19.9943 10H18V15H19.9943M19.9943 15C20.1629 16.5 19.6 19.5 16 19.5M16 19.5C16 19 15.8 18 15 18C14.2 18 13 18 12.5 18C12 18 10.8 18 10 18C9.2 18 9 19 9 19.5C9 20 9.2 21 10 21C10.8 21 12 21 12.5 21H15C15.8125 21 16 20 16 19.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <h5 class="fw-bold mb-3 text-uppercase">Notre service client</h5>
+                                    <p class="text-muted mb-0">Contactez notre service client au 7XXXXXXXX ou par email à contact@couraastou.com</p>
+                                </div>
                             </div>
-                            <div class="fw-bold mb-2 text-uppercase">Notre service client</div>
-                            <p class="text-muted my-2">Contactez notre service client au 7XXXXXXXX ou par email à contact@couraastou.com</p>
                         </div>
-                        <div class="col text-center m-3 animate-on-scroll animate-on-scroll--card">
-                            <div class="feature  mb-3">
-                                <svg fill="none" focusable="false" width="24" height="24" class="icon icon--picto-lock   " viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C13.1046 17 14 16.1046 14 15C14 13.8954 13.1046 13 12 13C10.8954 13 10 13.8954 10 15C10 16.1046 10.8954 17 12 17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M16 8H21V22H3V8H8M16 8C16 8 16 7.6 16 6C16 4 14.5 2 12 2C9.5 2 8 4 8 6C8 7.6 8 8 8 8M16 8H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  </svg>                            
+                        <div class="col-md-4 mb-4 mb-md-0 animate-on-scroll animate-on-scroll--card">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body text-center p-4 p-lg-5">
+                                    <div class="feature bg-gradient text-primary rounded-3 mb-4 p-3 d-inline-block align-center">
+                                        <svg fill="none" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C13.1046 17 14 16.1046 14 15C14 13.8954 13.1046 13 12 13C10.8954 13 10 13.8954 10 15C10 16.1046 10.8954 17 12 17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <path d="M16 8H21V22H3V8H8M16 8C16 8 16 7.6 16 6C16 4 14.5 2 12 2C9.5 2 8 4 8 6C8 7.6 8 8 8 8M16 8H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <h5 class="fw-bold mb-3 text-uppercase">Paiement sécurisé</h5>
+                                    <p class="text-muted mb-0">Toutes les informations de paiements sont sécurisées.</p>
+                                </div>
                             </div>
-                            <div class="fw-bold mb-2 text-uppercase">Paiement sécurisé</div>
-                            <p class="text-muted my-2">Toutes les informations de paiements sont sécurisées.</p>
                         </div>
-                        <div class="col text-center m-3 animate-on-scroll animate-on-scroll--card">
-                            <div class="feature mb-3">
-                                <svg fill="none" focusable="false" width="24" height="24" class="icon icon--picto-box   " viewBox="0 0 24 24">
-                                    <path d="M12 21L21 17.1429V6.85714M12 21L3 17.1429V6.85714M12 21V10.7143M21 6.85714L12 3L3 6.85714M21 6.85714L12 10.7143M3 6.85714L12 10.7143" stroke="currentColor" stroke-width="2"></path>
-                                  </svg>                            
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm border-0 animate-on-scroll animate-on-scroll--card">
+                                <div class="card-body text-center p-4 p-lg-5">
+                                    <div class="feature text-primary bg-gradient rounded-3 mb-4 p-3 d-inline-block">
+                                        <svg fill="none" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+                                            <path d="M12 21L21 17.1429V6.85714M12 21L3 17.1429V6.85714M12 21V10.7143M21 6.85714L12 3L3 6.85714M21 6.85714L12 10.7143M3 6.85714L12 10.7143" stroke="currentColor" stroke-width="2"></path>
+                                        </svg>
+                                    </div>
+                                    <h5 class="fw-bold mb-3 text-uppercase">Livraison offerte dès 3000 fcfa d'achats</h5>
+                                    <p class="text-muted mb-0">Nous livrons au senegal, et à l'international.</p>
+                                </div>
                             </div>
-                            <div class="fw-bold mb-2 text-uppercase">Livraison offerte dès 3000 fcfa d'achats</div>
-                            <p class="text-muted my-2">Nous livrons au senegal, et à l'international.</p>
                         </div>
                     </div>
                 </div>
@@ -178,11 +194,13 @@
                     </div>
                 </div>
             </div>
-            <div class="fixed-logo d-flex flex-column bg-tranparent">
-                <a href=""><img src="assets/facebook.png" alt=""></a>
-                <a href=""><img src="assets/instagram.png" alt=""></a>
-                <a href=""><img src="assets/tiktok.svg" alt=""></a>
-                <a href=""><img src="assets/whatsapp.png" alt=""></a>
+            <div class="position-fixed bottom-0 end-0 p-3 icons" style="z-index: 11 ">
+                <div class="d-flex flex-column bg-tranparent">
+                    <a href="#" class="btn  btn-floating m-1"><img loading="lazy" src="assets/facebook.png" alt=""></a>
+                    <a href="#" class="btn  btn-floating m-1 "><img loading="lazy" src="assets/instagram.png" alt=""></a>
+                    <a href="#" class="btn  btn-floating m-1 "><img loading="lazy" src="assets/tiktok.svg" alt=""></a>
+                    <a href="#" class="btn  btn-floating m-1 "><img loading="lazy" src="assets/whatsapp.png" alt=""></a>
+                </div>
             </div>
         </footer>
         <!-- Bootstrap core JS-->

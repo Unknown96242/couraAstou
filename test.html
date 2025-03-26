@@ -1,107 +1,241 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CouraAstou - Recherche</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <style>
-        /* Animation fluide pour la transition */
-        .search-container {
-            transition: all 0.3s ease;
-        }
-        /* Masquer l'input par défaut */
-        .search-input {
-            width: 0;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-        /* Classe active pour montrer l'input */
-        .search-active .search-input {
-            width: 200px;
-            opacity: 1;
-        }
-        /* Comportement mobile */
-        @media (max-width: 991.98px) {
-            .search-active-mobile .search-input {
-                width: 100%;
-                opacity: 1;
-            }
-        }
-    </style>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">CouraAstou</a>
-            
-            <!-- Bouton hamburger pour mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Boutique</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Concept</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                </ul>
-                
-                <!-- Conteneur de recherche -->
-                <div class="search-container d-flex align-items-center">
-                    <!-- Icône de recherche (visible par défaut) -->
-                    <button class="btn btn-link search-icon" id="searchToggle">
-                        <i class="bi bi-search"></i>
-                    </button>
-                    
-                    <!-- Champ de recherche (caché par défaut) -->
-                    <input type="text" class="form-control search-input" placeholder="Rechercher...">
-                    
-                    <!-- Icône panier -->
-                    <a href="#" class="btn btn-link ms-2">
-                        <i class="bi bi-cart"></i>
-                    </a>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>CouraAstou</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="css/style-boutique.css">
+        <link href="css/style2.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100 bg-light">
+        <div class="cart-overlay" id="cart-overlay">
+            <div class="cart-sidebar" id="cart-sidebar">
+                <div class="cart-header">
+                    <h2>Votre Panier</h2>
+                    <button id="close-cart">&times;</button>
+                </div>
+                <div class="cart-content">
+                    <p>Votre panier est vide.</p>
                 </div>
             </div>
         </div>
-    </nav>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchToggle = document.getElementById('searchToggle');
-            const searchContainer = document.querySelector('.search-container');
-            const searchInput = document.querySelector('.search-input');
-            
-            searchToggle.addEventListener('click', function(e) {
-                e.preventDefault();
+        <header>
+            <main class="flex-shrink-0">
+                <!-- Navigation-->
+                <div id="tete">
+                    <div class="bienvenu fw-bold bg-dark text-white py-1">
+                        <marquee behavior="" direction="" class="small">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas ullam molestiae repudiandae.</marquee>
+                    </div>
+                    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+                        <div class="container">
+                            <a class="navbar-brand fw-bold" id="logo" href="index.html">CouraAstou</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="boutique.html">Boutique</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="notre-concept.html">Notre Concept</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                                </ul>
+                                <div class="d-flex align-items-center">
+                                    <div class="input-group me-3 d-none d-md-flex">
+                                        <input type="text" class="form-control border-end-0" placeholder="Rechercher...">
+                                        <button class="btn btn-outline-secondary border-start-0" type="button">
+                                            <i class="bi bi-search"></i>
+                                        </button>
+                                    </div>
+                                    <a href="#" id="cart-link" class="btn btn-outline-dark position-relative">
+                                        <i class="bi bi-bag-heart-fill"></i>
+                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                            0
+                                        </span>
+                                    </a>
+                                    <button class="btn btn-outline-dark d-md-none ms-2" id="mobile-search-toggle">
+                                        <i class="bi bi-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    <!-- Mobile search (hidden by default) -->
+                    <div class="container-fluid bg-light py-2 d-md-none" id="mobile-search" style="display: none;">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Rechercher...">
+                            <button class="btn btn-secondary" type="button">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </header>
+        
+        <!-- Page content-->
+        <section class="py-5 bg-white">
+            <div class="container px-4 px-lg-5">
+                <!-- Contact form-->
+                <div class="contact-form rounded-3 py-5 px-4 px-md-5 mb-5 bg-light shadow-sm">
+                    <div class="text-center mb-5">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3 p-3 d-inline-block"><i class="bi bi-envelope fs-1"></i></div>
+                        <h1 class="fw-bolder">Contactez-nous</h1>
+                        <p class="lead fw-normal text-muted mb-0">Nous serions ravis d'avoir de vos nouvelles.</p>
+                    </div>
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
+                            <!-- Contact form-->
+                            <form id="contactForm">
+                                <!-- Name input-->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
+                                    <label for="name">Nom Complet</label>
+                                    <div class="invalid-feedback">Le nom est obligatoire.</div>
+                                </div>
+                                <!-- Email address input-->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="email" type="email" placeholder="name@example.com" required />
+                                    <label for="email">Adresse email</label>
+                                    <div class="invalid-feedback">L'adresse email est obligatoire.</div>
+                                    <div class="invalid-feedback">L'adresse email n'est pas valide</div>
+                                </div>
+                                <!-- Phone number input-->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" required />
+                                    <label for="phone">Telephone</label>
+                                    <div class="invalid-feedback">Le numero de telephone est obligatoire</div>
+                                </div>
+                                <!-- Message input-->
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control" id="message" style="height: 10rem" placeholder="Enter your message here..." required></textarea>
+                                    <label for="message">Message</label>
+                                    <div class="invalid-feedback">Le message est obligatoire.</div>
+                                </div>
+                                <!-- Submit success message-->
+                                <div class="d-none alert alert-success" id="submitSuccessMessage">
+                                    <div class="text-center mb-3">
+                                        <div class="fw-bolder">Votre message a ete envoye avec succes !</div>
+                                        Nous vous repondrons dans les plus brefs delais.
+                                    </div>
+                                </div>
+                                <!-- Submit error message-->
+                                <div class="d-none alert alert-danger" id="submitErrorMessage">
+                                    <div class="text-center mb-3">Erreur lors de l'envoi du message!</div>
+                                </div>
+                                <!-- Submit Button-->
+                                <div class="d-grid">
+                                    <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Envoyer</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 
-                if (window.innerWidth > 991.98) {
-                    // Comportement desktop
-                    searchContainer.classList.toggle('search-active');
+                <!-- Contact cards-->
+                <div class="row gx-5 py-5">
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body text-center p-4 p-lg-5">
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 p-3 d-inline-block">
+                                    <svg fill="none" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M4.00571 10C4.00571 10 3.50018 2 12 2C20.4997 2 19.9943 10 19.9943 10M4.00571 10C3.33714 10.3333 2 11 2 12.5C2 14 3 15 4.00571 15C4.81028 15 5.67048 15 6 15V10H4.00571ZM19.9943 10C20.6629 10.1667 22 10.9 22 12.5C22 14.1 20.6629 14.8333 19.9943 15M19.9943 10H18V15H19.9943M19.9943 15C20.1629 16.5 19.6 19.5 16 19.5M16 19.5C16 19 15.8 18 15 18C14.2 18 13 18 12.5 18C12 18 10.8 18 10 18C9.2 18 9 19 9 19.5C9 20 9.2 21 10 21C10.8 21 12 21 12.5 21H15C15.8125 21 16 20 16 19.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="fw-bold mb-3 text-uppercase">Notre service client</h5>
+                                <p class="text-muted mb-0">Contactez notre service client au 7XXXXXXXX ou par email à contact@couraastou.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body text-center p-4 p-lg-5">
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 p-3 d-inline-block">
+                                    <svg fill="none" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C13.1046 17 14 16.1046 14 15C14 13.8954 13.1046 13 12 13C10.8954 13 10 13.8954 10 15C10 16.1046 10.8954 17 12 17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M16 8H21V22H3V8H8M16 8C16 8 16 7.6 16 6C16 4 14.5 2 12 2C9.5 2 8 4 8 6C8 7.6 8 8 8 8M16 8H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="fw-bold mb-3 text-uppercase">Paiement sécurisé</h5>
+                                <p class="text-muted mb-0">Toutes les informations de paiements sont sécurisées.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body text-center p-4 p-lg-5">
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 p-3 d-inline-block">
+                                    <svg fill="none" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M12 21L21 17.1429V6.85714M12 21L3 17.1429V6.85714M12 21V10.7143M21 6.85714L12 3L3 6.85714M21 6.85714L12 10.7143M3 6.85714L12 10.7143" stroke="currentColor" stroke-width="2"></path>
+                                    </svg>
+                                </div>
+                                <h5 class="fw-bold mb-3 text-uppercase">Livraison offerte dès 3000 fcfa d'achats</h5>
+                                <p class="text-muted mb-0">Nous livrons au senegal, et à l'international.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer-->
+        <footer class="py-4 mt-auto bg-dark text-white">
+            <div class="container px-4 px-lg-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0">CouraAstou &copy; Tout droit reserve</div></div>
+                    <div class="col-auto">
+                        <a class="small text-white-50" href="#!">Privacy</a>
+                        <span class="mx-1">&middot;</span>
+                        <a class="small text-white-50" href="#!">Terms</a>
+                        <span class="mx-1">&middot;</span>
+                        <a class="small text-white-50" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+                <div class="d-flex flex-column">
+                    <a href="#" class="btn  btn-floating m-1 rounded-circle"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="btn  btn-floating m-1 rounded-circle"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="btn  btn-floating m-1 rounded-circle"><i class="bi bi-tiktok"></i></a>
+                    <a href="#" class="btn  btn-floating m-1 rounded-circle"><i class="bi bi-whatsapp"></i></a>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script>
+            // Mobile search toggle
+            document.getElementById('mobile-search-toggle').addEventListener('click', function() {
+                const mobileSearch = document.getElementById('mobile-search');
+                mobileSearch.style.display = mobileSearch.style.display === 'none' ? 'block' : 'none';
+            });
+            
+            // Form validation
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const form = event.target;
+                if (form.checkValidity()) {
+                    // Simulate form submission
+                    document.getElementById('submitSuccessMessage').classList.remove('d-none');
+                    form.reset();
                 } else {
-                    // Comportement mobile
-                    searchContainer.classList.toggle('search-active-mobile');
-                }
-                
-                // Focus sur l'input quand il apparaît
-                if (searchContainer.classList.contains('search-active') || 
-                    searchContainer.classList.contains('search-active-mobile')) {
-                    searchInput.focus();
+                    form.classList.add('was-validated');
                 }
             });
-            
-            // Fermer la recherche si on clique ailleurs (mobile)
-            document.addEventListener('click', function(e) {
-                if (window.innerWidth <= 991.98 && 
-                    !searchContainer.contains(e.target) && 
-                    !e.target.classList.contains('search-icon')) {
-                    searchContainer.classList.remove('search-active-mobile');
-                }
-            });
-        });
-    </script>
-</body>
+        </script>
+        <script src="js/scroll.js"></script>
+        <script src="js/panier.js"></script>
+    </body>
 </html>

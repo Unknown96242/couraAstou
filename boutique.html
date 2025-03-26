@@ -60,14 +60,19 @@
                                             <div class="search-container d-flex align-items-center icons">
                                                 <!-- Icône de recherche (visible par défaut) -->
                                                 <a class="btn btn-link search-icon" id="searchToggle">
-                                                    <img src="assets/search-heart.svg" alt="">
+                                                    <img loading="lazy" src="assets/search-heart.svg" alt="">
                                                 </a>
                                                 
                                                 <!-- Champ de recherche (caché par défaut) -->
                                                 <input type="text" class="form-control search-input me-2" placeholder="Rechercher...">
                                                 
                                                 <!-- Icône panier -->
-                                                <a href="#" id="cart-link"><img src="assets/bag-heart-fill.svg" alt=""></a>
+                                                <a href="#" id="cart-link" class="btn btn-outline-success position-relative">
+                                                    <i class="bi bi-bag-heart-fill"></i>
+                                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                                        0
+                                                    </span>
+                                                </a>                                            
                                             </div>
                                     </div>
                                     
@@ -97,9 +102,10 @@
                         <!-- Image slider (en haut sur mobile, à gauche sur desktop) -->
                         <div class="col-lg-7 mb-4 mt-lg-0" >
                             <div class="wrapper">
+                                
                                 <div class="images">
-                                    <div class="img-1"></div>
-                                    <div class="img-2"></div>
+                                    <div class="lazy-bg img-1" data-bg="url(assets/img/family-2.jpg)" ></div>
+                                    <div class="lazy-bg img-2" data-bg="url(../assets/img/fammille-2.jpg)"></div>
                                 </div>
                                 <div class="slider">
                                     <div class="drag-line">
@@ -169,208 +175,247 @@
                             </div>
                         </div>
                         <!-- Article en vente -->
-                        <div class="articles-boutique ">
-                            <div class="contenu-vendre ">
-                                <div class="">
-                                    <div class="container px-4 px-lg-5 mt-4">
-                                        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                                            <div class="col mb-5 animate-on-scroll animate-on-scroll--card">
-                                                <div class="card h-100">
-                                                    <!-- Product image-->
-                                                    <img class="card-img-top" src="assets/img/carte1.webp" alt="..." />
-                                                    <!-- Product details-->
-                                                    <div class="card-body p-4">
-                                                        <div class="text-center">
-                                                            <!-- Product name-->
-                                                            <h5 class="fw-bolder">Fancy Product</h5>
-                                                            <!-- Product price-->
-                                                            $40.00 - $80.00
-                                                        </div>
-                                                    </div>
-                                                    <!-- Product actions-->
-                                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ajouter</a></div>
-                                                    </div>
+                        <div class="articles-boutique">
+                            <div class="contenu-vendre">
+                                <div class="container px-2 px-sm-4 mt-3">
+                                    <div class="row g-3 g-sm-4 row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                                        
+                                        <!-- Produit 1 -->
+                                        <div class="col mb-3 mb-sm-4 animate-on-scroll animate-on-scroll--card">
+                                            <div class="card h-100 shadow-sm">
+                                                <!-- Image produit -->
+                                                <img loading="lazy" class="card-img-top img-fluid" src="assets/img/carte1.webp" alt="Produit">
+                                                
+                                                <!-- Badge solde -->
+                                                <div class="position-absolute top-0 end-0 m-2">
+                                                    <span class="badge bg-danger">solde</span>
                                                 </div>
-                                            </div>
-                                            <div class="col mb-5 animate-on-scroll animate-on-scroll--card">
-                                                <div class="card h-100">
-                                                    <!-- solde badge-->
-                                                    <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">solde</div>
-                                                    <!-- Product image-->
-                                                    <img class="card-img-top" src="assets/img/carte2.webp" alt="..." />
-                                                    <!-- Product details-->
-                                                    <div class="card-body p-4">
-                                                        <div class="text-center">
-                                                            <!-- Product name-->
-                                                            <h5 class="fw-bolder">Special Item</h5>
-                                                            <!-- Product reviews-->
-                                                            <div class="d-flex justify-content-center small text-warning mb-2">
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                            </div>
-                                                            <!-- Product price-->
+                                                
+                                                <!-- Détails produit -->
+                                                <div class="card-body p-3 p-sm-4">
+                                                    <div class="text-center">
+                                                        <h5 class="fw-bolder mb-2">Fancy Product</h5>
+                                                        <div class="d-flex justify-content-center small text-warning mb-2">
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                        </div>
+                                                        <div>
                                                             <span class="text-muted text-decoration-line-through">$20.00</span>
-                                                            $18.00
                                                         </div>
-                                                    </div>
-                                                    <!-- Product actions-->
-                                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ajouter</a></div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col mb-5 animate-on-scroll animate-on-scroll--card">
-                                                <div class="card h-100">
-                                                    <!-- solde badge-->
-                                                    <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">solde</div>
-                                                    <!-- Product image-->
-                                                    <img class="card-img-top" src="assets/img/carte3.webp" alt="..." />
-                                                    <!-- Product details-->
-                                                    <div class="card-body p-4">
-                                                        <div class="text-center">
-                                                            <!-- Product name-->
-                                                            <h5 class="fw-bolder">solde Item</h5>
-                                                            <!-- Product price-->
-                                                            <span class="text-muted text-decoration-line-through">$50.00</span>
-                                                            $25.00
-                                                        </div>
-                                                    </div>
-                                                    <!-- Product actions-->
-                                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ajouter</a></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col mb-5 animate-on-scroll animate-on-scroll--card">
-                                                <div class="card h-100">
-                                                    <!-- Product image-->
-                                                    <img class="card-img-top" src="assets/img/carte4-avant.webp" alt="..." />
-                                                    <!-- Product details-->
-                                                    <div class="card-body p-4">
-                                                        <div class="text-center">
-                                                            <!-- Product name-->
-                                                            <h5 class="fw-bolder">Popular Item</h5>
-                                                            <!-- Product reviews-->
-                                                            <div class="d-flex justify-content-center small text-warning mb-2">
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                            </div>
-                                                            <!-- Product price-->
-                                                            $40.00
-                                                        </div>
-                                                    </div>
-                                                    <!-- Product actions-->
-                                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ajouter</a></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col mb-5 animate-on-scroll animate-on-scroll--card">
-                                                <div class="card h-100">
-                                                    <!-- solde badge-->
-                                                    <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">solde</div>
-                                                    <!-- Product image-->
-                                                    <img class="card-img-top" src="assets/img/carte1-avant.webp" alt="..." />
-                                                    <!-- Product details-->
-                                                    <div class="card-body p-4">
-                                                        <div class="text-center">
-                                                            <!-- Product name-->
-                                                            <h5 class="fw-bolder">solde Item</h5>
-                                                            <!-- Product price-->
-                                                            <span class="text-muted text-decoration-line-through">$50.00</span>
-                                                            $25.00
-                                                        </div>
-                                                    </div>
-                                                    <!-- Product actions-->
-                                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ajouter</a></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col mb-5 animate-on-scroll animate-on-scroll--card">
-                                                <div class="card h-100">
-                                                    <!-- Product image-->
-                                                    <img class="card-img-top" src="assets/img/carte2-avant.webp" alt="..." />
-                                                    <!-- Product details-->
-                                                    <div class="card-body p-4">
-                                                        <div class="text-center">
-                                                            <!-- Product name-->
-                                                            <h5 class="fw-bolder">Fancy Product</h5>
-                                                            <!-- Product price-->
-                                                            $120.00 - $280.00
-                                                        </div>
-                                                    </div>
-                                                    <!-- Product actions-->
-                                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ajouter</a></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col mb-5 animate-on-scroll animate-on-scroll--card">
-                                                <div class="card h-100">
-                                                    <!-- solde badge-->
-                                                    <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">solde</div>
-                                                    <!-- Product image-->
-                                                    <img class="card-img-top" src="assets/img/carte3-avant.webp" alt="..." />
-                                                    <!-- Product details-->
-                                                    <div class="card-body p-4">
-                                                        <div class="text-center">
-                                                            <!-- Product name-->
-                                                            <h5 class="fw-bolder">Special Item</h5>
-                                                            <!-- Product reviews-->
-                                                            <div class="d-flex justify-content-center small text-warning mb-2">
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                            </div>
-                                                            <!-- Product price-->
-                                                            <span class="text-muted text-decoration-line-through">$20.00</span>
-                                                            $18.00
-                                                        </div>
-                                                    </div>
-                                                    <!-- Product actions-->
-                                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ajouter</a></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col mb-5 animate-on-scroll animate-on-scroll--card">
-                                                <div class="card h-100">
-                                                    <!-- Product image-->
-                                                    <img class="card-img-top" src="assets/img/365.webp" alt="..." />
-                                                    <!-- Product details-->
-                                                    <div class="card-body p-4">
-                                                        <div class="text-center">
-                                                            <!-- Product name-->
-                                                            <h5 class="fw-bolder">Popular Item</h5>
-                                                            <!-- Product reviews-->
-                                                            <div class="d-flex justify-content-center small text-warning mb-2">
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                                <div class="bi-star-fill"></div>
-                                                            </div>
-                                                            <!-- Product price-->
-                                                            $40.00
-                                                        </div>
-                                                    </div>
-                                                    <!-- Product actions-->
-                                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ajouter</a></div>
-                                                    </div>
+                                                
+                                                <!-- Bouton -->
+                                                <div class="card-footer bg-transparent border-top-0 p-3 p-sm-4">
+                                                    <a href="#" class="btn btn-outline-dark w-100">Ajouter</a>
                                                 </div>
                                             </div>
                                         </div>
+                        
+                                        <!-- Produit 2 -->
+                                        <div class="col mb-3 mb-sm-4 animate-on-scroll animate-on-scroll--card">
+                                            <div class="card h-100 shadow-sm">
+                                                <img loading="lazy" class="card-img-top img-fluid" src="assets/img/carte2.webp" alt="Produit">
+                                                <div class="card-body p-3 p-sm-4">
+                                                    <div class="text-center">
+                                                        <h5 class="fw-bolder mb-2">Special Item</h5>
+                                                        <div class="d-flex justify-content-center small text-warning mb-2">
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                        </div>
+                                                        <div>$40.00</div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer bg-transparent border-top-0 p-3 p-sm-4">
+                                                    <a href="#" class="btn btn-outline-dark w-100">Ajouter</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Produit 3 -->
+                                        <div class="col mb-3 mb-sm-4 animate-on-scroll animate-on-scroll--card">
+                                            <div class="card h-100 shadow-sm">
+                                                <!-- Image produit -->
+                                                <img loading="lazy" class="card-img-top img-fluid" src="assets/img/carte1.webp" alt="Produit">
+                                                
+                                                <!-- Badge solde -->
+                                                <div class="position-absolute top-0 end-0 m-2">
+                                                    <span class="badge bg-danger">solde</span>
+                                                </div>
+                                                
+                                                <!-- Détails produit -->
+                                                <div class="card-body p-3 p-sm-4">
+                                                    <div class="text-center">
+                                                        <h5 class="fw-bolder mb-2">Fancy Product</h5>
+                                                        <div class="d-flex justify-content-center small text-warning mb-2">
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                        </div>
+                                                        <div>
+                                                            <span class="text-muted text-decoration-line-through">$20.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Bouton -->
+                                                <div class="card-footer bg-transparent border-top-0 p-3 p-sm-4">
+                                                    <a href="#" class="btn btn-outline-dark w-100">Ajouter</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                        
+                                        <!-- Produit 4 -->
+                                        <div class="col mb-3 mb-sm-4 animate-on-scroll animate-on-scroll--card">
+                                            <div class="card h-100 shadow-sm">
+                                                <img loading="lazy" class="card-img-top img-fluid" src="assets/img/carte2.webp" alt="Produit">
+                                                <div class="card-body p-3 p-sm-4">
+                                                    <div class="text-center">
+                                                        <h5 class="fw-bolder mb-2">Special Item</h5>
+                                                        <div class="d-flex justify-content-center small text-warning mb-2">
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                        </div>
+                                                        <div>$40.00</div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer bg-transparent border-top-0 p-3 p-sm-4">
+                                                    <a href="#" class="btn btn-outline-dark w-100">Ajouter</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Produit 5 -->
+                                        <div class="col mb-3 mb-sm-4 animate-on-scroll animate-on-scroll--card">
+                                            <div class="card h-100 shadow-sm">
+                                                <!-- Image produit -->
+                                                <img loading="lazy" class="card-img-top img-fluid" src="assets/img/carte1.webp" alt="Produit">
+                                                
+                                                <!-- Badge solde -->
+                                                <div class="position-absolute top-0 end-0 m-2">
+                                                    <span class="badge bg-danger">solde</span>
+                                                </div>
+                                                
+                                                <!-- Détails produit -->
+                                                <div class="card-body p-3 p-sm-4">
+                                                    <div class="text-center">
+                                                        <h5 class="fw-bolder mb-2">Fancy Product</h5>
+                                                        <div class="d-flex justify-content-center small text-warning mb-2">
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                        </div>
+                                                        <div>
+                                                            <span class="text-muted text-decoration-line-through">$20.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Bouton -->
+                                                <div class="card-footer bg-transparent border-top-0 p-3 p-sm-4">
+                                                    <a href="#" class="btn btn-outline-dark w-100">Ajouter</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                        
+                                        <!-- Produit 6 -->
+                                        <div class="col mb-3 mb-sm-4 animate-on-scroll animate-on-scroll--card">
+                                            <div class="card h-100 shadow-sm">
+                                                <img loading="lazy" class="card-img-top img-fluid" src="assets/img/carte2.webp" alt="Produit">
+                                                <div class="card-body p-3 p-sm-4">
+                                                    <div class="text-center">
+                                                        <h5 class="fw-bolder mb-2">Special Item</h5>
+                                                        <div class="d-flex justify-content-center small text-warning mb-2">
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                        </div>
+                                                        <div>$40.00</div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer bg-transparent border-top-0 p-3 p-sm-4">
+                                                    <a href="#" class="btn btn-outline-dark w-100">Ajouter</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Produit 7 -->
+                                        <div class="col mb-3 mb-sm-4 animate-on-scroll animate-on-scroll--card">
+                                            <div class="card h-100 shadow-sm">
+                                                <!-- Image produit -->
+                                                <img loading="lazy" class="card-img-top img-fluid" src="assets/img/carte1.webp" alt="Produit">
+                                                
+                                                <!-- Badge solde -->
+                                                <div class="position-absolute top-0 end-0 m-2">
+                                                    <span class="badge bg-danger">solde</span>
+                                                </div>
+                                                
+                                                <!-- Détails produit -->
+                                                <div class="card-body p-3 p-sm-4">
+                                                    <div class="text-center">
+                                                        <h5 class="fw-bolder mb-2">Fancy Product</h5>
+                                                        <div class="d-flex justify-content-center small text-warning mb-2">
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                        </div>
+                                                        <div>
+                                                            <span class="text-muted text-decoration-line-through">$20.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!-- Bouton -->
+                                                <div class="card-footer bg-transparent border-top-0 p-3 p-sm-4">
+                                                    <a href="#" class="btn btn-outline-dark w-100">Ajouter</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                        
+                                        <!-- Produit 8 -->
+                                        <div class="col mb-3 mb-sm-4 animate-on-scroll animate-on-scroll--card">
+                                            <div class="card h-100 shadow-sm">
+                                                <img loading="lazy" class="card-img-top img-fluid" src="assets/img/carte2.webp" alt="Produit">
+                                                <div class="card-body p-3 p-sm-4">
+                                                    <div class="text-center">
+                                                        <h5 class="fw-bolder mb-2">Special Item</h5>
+                                                        <div class="d-flex justify-content-center small text-warning mb-2">
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                            <i class="bi bi-star-fill"></i>
+                                                        </div>
+                                                        <div>$40.00</div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer bg-transparent border-top-0 p-3 p-sm-4">
+                                                    <a href="#" class="btn btn-outline-dark w-100">Ajouter</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                        
+                        
+                        
+                        
+                                        <!-- Répéter pour les autres produits avec la même structure -->
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -393,11 +438,13 @@
                     </div>
                 </div>
             </div>
-            <div class="fixed-logo d-flex flex-column bg-tranparent">
-                <a href=""><img src="assets/facebook.png" alt=""></a>
-                <a href=""><img src="assets/instagram.png" alt=""></a>
-                <a href=""><img src="assets/tiktok.svg" alt=""></a>
-                <a href=""><img src="assets/whatsapp.png" alt=""></a>
+            <div class="position-fixed bottom-0 end-0 p-3 icons" style="z-index: 11 ">
+                <div class="d-flex flex-column bg-tranparent">
+                    <a href="#" class="btn  btn-floating m-1"><img loading="lazy" src="assets/facebook.png" alt=""></a>
+                    <a href="#" class="btn  btn-floating m-1 "><img loading="lazy" src="assets/instagram.png" alt=""></a>
+                    <a href="#" class="btn  btn-floating m-1 "><img loading="lazy" src="assets/tiktok.svg" alt=""></a>
+                    <a href="#" class="btn  btn-floating m-1 "><img loading="lazy" src="assets/whatsapp.png" alt=""></a>
+                </div>
             </div>
         </footer>
         <!-- Bootstrap core JS-->
@@ -406,5 +453,35 @@
         <script src="js/boutiqueScript.js"></script>
         <script src="js/panier.js"></script>
         <script src="js/scroll.js"></script>
+        <script>
+            // Configuration de l'Observer
+            const lazyBgObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bgUrl = entry.target.getAttribute('data-bg');
+                        entry.target.style.backgroundImage = bgUrl;
+                        
+                        // Option : Effet de fondu progressif
+                        entry.target.style.opacity = '0';
+                        let opacity = 0;
+                        const fadeIn = setInterval(() => {
+                            opacity += 0.05;
+                            entry.target.style.opacity = opacity;
+                            if (opacity >= 1) clearInterval(fadeIn);
+                        }, 20);
+                        
+                        lazyBgObserver.unobserve(entry.target);
+                    }
+                });
+            }, { 
+                rootMargin: '200px', // Déclenchement 200px avant l'élément
+                threshold: 0.1 
+            });
+    
+            // Application à tous les éléments
+            document.querySelectorAll('.lazy-bg').forEach(el => {
+                lazyBgObserver.observe(el);
+            });
+            </script>
     </body>
 </html>
