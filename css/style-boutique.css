@@ -25,16 +25,16 @@
     width: 100%;
     background:  no-repeat ;
     background-size: cover;
-    /* background: url("images/car.jpg") no-repeat; */
+    /* background: url("../images/car.jpg") no-repeat;  */
   }
   .wrapper .images .img-2{
     position: absolute;
     height: 100%;
     width: 50%;
-    /* filter: blur(5px); */
+    /* filter: blur(5px);  */
     background:  no-repeat ;
     background-size: cover;
-    /* background: url("images/car.png") no-repeat; */
+    /* background: url("../assets/img/fammille-2.jpg") no-repeat;  */
   }
   .wrapper .slider{
     position: absolute;
