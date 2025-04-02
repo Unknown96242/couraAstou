@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajout de produit</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <div class="container py-5">
+        <div class="card shadow-lg">
+            <div class="card-header py-3 bg-primary text-white">
+                <h1 class="h3 mb-0 text-center"><i class="fas fa-box-open me-2"></i>Ajouter un nouveau produit</h1>
+            </div>
+            <div class="card-body">
+                <form id="productForm" class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Nom du produit -->
+                            <div class="mb-3">
+                                <label for="productName" class="form-label required-field">Nom du produit</label>
+                                <input type="text" class="form-control" id="productName" required>
+                                <div class="invalid-feedback">Veuillez saisir le nom du produit.</div>
+                            </div>
+                            
+                            <!-- Catégorie -->
+                            <div class="mb-3">
+                                <label for="productCategory" class="form-label required-field">Catégorie</label>
+                                <select class="form-select" id="productCategory" required>
+                                    <option value="" selected disabled>Choisir une catégorie</option>
+                                    <option value="electronique">Électronique</option>
+                                    <option value="vetements">Vêtements</option>
+                                    <option value="alimentation">Alimentation</option>
+                                    <option value="meubles">Meubles</option>
+                                    <option value="beaute">Beauté</option>
+                                    <option value="sport">Sport</option>
+                                    <option value="jouets">Jouets</option>
+                                </select>
+                                <div class="invalid-feedback">Veuillez sélectionner une catégorie.</div>
+                            </div>
+                            
+                            <!-- Prix -->
+                            <div class="mb-3">
+                                <label for="productPrice" class="form-label required-field">Prix (€)</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="productPrice" min="0" step="0.01" required>
+                                    <span class="input-group-text">€</span>
+                                    <div class="invalid-feedback">Veuillez saisir un prix valide.</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Stock -->
+                            <div class="mb-3">
+                                <label for="productStock" class="form-label required-field">Stock disponible</label>
+                                <input type="number" class="form-control" id="productStock" min="0" required>
+                                <div class="invalid-feedback">Veuillez saisir la quantité en stock.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <!-- Description -->
+                            <div class="mb-3">
+                                <label for="productDescription" class="form-label required-field">Description</label>
+                                <textarea class="form-control" id="productDescription" rows="4" required></textarea>
+                                <div class="invalid-feedback">Veuillez saisir une description.</div>
+                            </div>
+                            
+                            <!-- Images -->
+                            <div class="mb-3">
+                                <label for="productImages" class="form-label required-field">Images du produit</label>
+                                <input type="file" class="form-control" id="productImages" multiple accept="image/*" required>
+                                <div class="form-text">Maximum 5 images (JPG, PNG, WEBP - 5MB max par image)</div>
+                                <div id="imagePreview" class="image-preview-container mt-2"></div>
+                                <div class="invalid-feedback">Veuillez sélectionner au moins une image.</div>
+                            </div>
+                            
+                            <!-- Barre de progression -->
+                            <div id="progressContainer" class="progress-container d-none">
+                                <div class="progress">
+                                    <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" 
+                                         role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                                </div>
+                                <small class="text-muted d-block text-center mt-1">Téléversement en cours...</small>
+                            </div>
+                            
+                            <!-- Dates (générées automatiquement) -->
+                            <input type="hidden" id="createdAt">
+                            <input type="hidden" id="updatedAt">
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4 pt-3 border-top">
+                        <button type="reset" class="btn btn-outline-secondary me-md-2">
+                            <i class="fas fa-eraser me-1"></i> Réinitialiser
+                        </button>
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                            <i class="fas fa-save me-1"></i> Enregistrer le produit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Modal de confirmation -->
+        <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title" id="confirmationModalLabel">
+                            <i class="fas fa-check-circle me-2"></i>Produit ajouté avec succès
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-success">
+                            <i class="fas fa-check me-2"></i>Le produit a été enregistré avec succès dans la base de données.
+                        </div>
+                        <h6 class="mb-2">Détails du produit :</h6>
+                        <pre id="productDataPreview" class="modal-pre bg-light p-3 rounded"></pre>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="fas fa-times me-1"></i>Fermer
+                        </button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="addAnotherBtn">
+                            <i class="fas fa-plus-circle me-1"></i>Ajouter un autre produit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+    <!-- Firebase SDK -->
+    <script type="module" src="../js/admin/script.js"></script>
+</body>
+</html>

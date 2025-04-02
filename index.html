@@ -1,729 +1,551 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>CouraAstou</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link rel="stylesheet" href="css/swiper-bundle.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="css/style2.css" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    </head>
-    <body class="d-flex flex-column h-100">
-        <!-- Panier -->
-        <div class="cart-overlay" id="cart-overlay">
-            <div class="cart-sidebar" id="cart-sidebar">
-                <div class="cart-header">
-                    <h2>Votre Panier</h2>
-                    <button id="close-cart">&times;</button>
-                </div>
-                <div class="cart-content">
-                    <p>Votre panier est vide.</p>
-                </div>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>CouraAstou</title>
+    <!-- Favicon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/style2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script type="module" src="./js/affichageProduit.js"></script>
+
+</head>
+
+<body class="d-flex flex-column h-100">
+    <!-- Panier -->
+    <div class="cart-overlay" id="cart-overlay">
+        <div class="cart-sidebar" id="cart-sidebar">
+            <div class="cart-header">
+                <h2>Votre Panier</h2>
+                <button id="close-cart">&times;</button>
+            </div>
+            <div class="cart-content">
+                <p>Votre panier est vide.</p>
             </div>
         </div>
-        <!-- ----------------------------- -->
-        <header>
-            <main class="flex-shrink-0">
-                <!-- Navigation-->
-                <div id="tete">
-                    <div class="bienvenu fw-bold">
-                        <marquee behavior="" direction=""> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas ullam molestiae repudiandae.</marquee>
-                    </div>
-                    
-                    <nav class="navbar navbar-expand-lg ">
-                        <div class="container pp">
-                            <a class="navbar-brand " id="logo" href="index.html">CouraAstou</a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarContent" >
-                                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="boutique.html">Boutique</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="notre-concept.html">Notre Concept</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                                </ul>
-                                    <div class="search-container d-flex align-items-center icons">
-                                        <!-- Icône de recherche (visible par défaut) -->
-                                        <a class="btn btn-link search-icon" id="searchToggle">
-                                            <img loading="lazy" src="assets/search-heart.svg" loading="lazy" alt="">
-                                        </a>
-                                        
-                                        <!-- Champ de recherche (caché par défaut) -->
-                                        <input type="text" class="form-control search-input me-2" placeholder="Rechercher...">
-                                        
-                                        <!-- Icône panier -->
-                                        <a href="#" id="cart-link" class="btn btn-outline-success position-relative">
-                                            <i class="bi bi-bag-heart-fill"></i>
-                                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                                0
-                                            </span>
-                                        </a>                                   
-                                    </div>
+    </div>
+    <!-- ----------------------------- -->
+    <header>
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <div id="tete">
+                <div class="bienvenu fw-bold">
+                    <marquee behavior="" direction=""> Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Voluptas ullam molestiae repudiandae.</marquee>
+                </div>
+
+                <nav class="navbar navbar-expand-lg ">
+                    <div class="container pp">
+                        <a class="navbar-brand " id="logo" href="index.html">CouraAstou</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarContent">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarContent">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                                <li class="nav-item"><a class="nav-link" href="boutique.html">Boutique</a></li>
+                                <li class="nav-item"><a class="nav-link" href="notre-concept.html">Notre Concept</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            </ul>
+                            <div class="search-container d-flex align-items-center icons">
+                                <!-- Icône de recherche (visible par défaut) -->
+                                <a class="btn btn-link search-icon" id="searchToggle">
+                                    <img loading="lazy" src="assets/search-heart.svg" loading="lazy" alt="">
+                                </a>
+
+                                <!-- Champ de recherche (caché par défaut) -->
+                                <input type="text" class="form-control search-input me-2" placeholder="Rechercher...">
+
+                                <!-- Icône panier -->
+                                <button class="btn position-relative" id="cartButton">
+                                    <i class="bi bi-bag-heart-fill"></i>
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-counter">
+                                        0
+                                    </span>
+                                </button>
                             </div>
-                            
                         </div>
-                    </nav>
-                    <!-- Header-->
-                    <div class="lazy-bg" data-bg="url(assets/img/slogan.jpg)" style="aspect-ratio: 16/9;">
+
+                    </div>
+                </nav>
+                <!-- Header-->
+                <div class="lazy-bg" data-bg="url(assets/img/slogan.jpg)" style="aspect-ratio: 16/9;">
                     <div class="container paysage slogan  rounded-3 position-relative ">
-                        <div class=" position-absolute bottom-0 start-50 translate-middle text-center text-white w-70 text-white px-5 text-slogan rounded-3">
+                        <div
+                            class=" position-absolute bottom-0 start-50 translate-middle text-center text-white w-70 text-white px-5 text-slogan rounded-3">
                             <div class="animate-on-scroll animate-on-scroll--card">
                                 <h1>Votre plus belle experience religieuse vivez la avec nous</h1>
                             </div>
                         </div>
                     </div>
-                    </div>
                 </div>
-            </main>
-        </header>
-            <!-- Features section-->
+            </div>
+        </main>
+    </header>
+    <!-- Features section-->
 
-
-            <section class="py-5" id="features">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-6 mb-4 mb-md-0 a-la-une  animate-on-scroll animate-on-scroll--card">
-                            <img loading="lazy" src="assets/img/planner.webp" alt="Planner" class="img-fluid rounded-3 shadow">
+    <section class="py-5" id="features">
+        <div class="container px-5 my-5 ">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0 a-la-une  animate-on-scroll animate-on-scroll--card">
+                    <img loading="lazy" src="assets/img/planner.webp" alt="Planner" class="img-fluid rounded-3 shadow">
+                </div>
+                <div class="col-md-6">
+                    <div class=" mb-5 mb-lg-0 animate-on-scroll animate-on-scroll--cta">
+                        <div class="col-lg-7">
+                            <h2 class="fw-bolder fs-1 mb-0">Article le plus vendu en ce mois saint</h2>
                         </div>
-                        <div class="col-md-6">
-                            <div class=" mb-5 mb-lg-0 animate-on-scroll animate-on-scroll--cta">
-                                <div class="col-lg-7">
-                                    <h2 class="fw-bolder fs-1 mb-0">Article le plus vendu en ce mois saint</h2>
-                                </div>
-                                <div class="pub mt-4">
-                                    <p class="text-success fw-bold fs-4">A partir de $17.5</p>
-                                </div>
-                                <div class="mt-4">
-                                    <span class="promo rounded-4">
-                                        🌙Promo ramadan jusqu'a: -30%
-                                    </span>
-                                </div>
-                                <div class="mt-4">
-                                    <p>
-                                        Ne subit plus ton ramadan vit le pleinement:
-                                        <ul>
-                                            <li>🌙 Garde une routine stable et équilibrée, même en plein jeûne</li>
-                                            <li>🌿Avance chaque jour avec intention, sans frustration ni culpabilite</li>
-                                            <li>🎯fixe tes objectifs spirituels et voit ton evolution </li>
-                                        </ul>
-                                    </p>
-                                </div>  
-                            </div>
+                        <div class="pub mt-4">
+                            <p class="text-success fw-bold fs-4">A partir de $17.5</p>
+                        </div>
+                        <div class="mt-4">
+                            <span class="promo rounded-4">
+                                🌙Promo ramadan jusqu'a: -30%
+                            </span>
+                        </div>
+                        <div class="mt-4">
+                            <p>
+                                Ne subit plus ton ramadan vit le pleinement:
+                            <ul>
+                                <li>🌙 Garde une routine stable et équilibrée, même en plein jeûne</li>
+                                <li>🌿Avance chaque jour avec intention, sans frustration ni culpabilite</li>
+                                <li>🎯fixe tes objectifs spirituels et voit ton evolution </li>
+                            </ul>
+                            </p>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- Testimonial section-->
-            <div class="py-5 citation animate-on-scroll animate-on-scroll--cta">
-                <div class="container px-5 my-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-10 col-xl-7">
-                            <div class="text-center">
-                                <div class="fs-4 mb-4 fst-italic">"Celui qui étudie le Coran et le médite obtient la compréhension profonde de la religion."</div>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <img loading="lazy" class="rounded-circle me-3" src="assets/img/Abdullah-Ibn-Abbas.jpeg" id="citation-img" alt="..." />
-                                    <div class="fw-bold citation-nom">
-                                        Abdullah Ibn Abbas 
-                                        <span class="fw-bold text-primary mx-1">/</span>
-                                        <span class="text-black">
-                                            رضي الله عنه
-                                        </span>
-                                      
-                                    </div>
-                                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial section-->
+    <div class="py-5 citation animate-on-scroll animate-on-scroll--cta">
+        <div class="container px-5 my-5">
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-10 col-xl-7">
+                    <div class="text-center">
+                        <div class="fs-4 mb-4 fst-italic">"Celui qui étudie le Coran et le médite obtient la
+                            compréhension profonde de la religion."</div>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img loading="lazy" class="rounded-circle me-3" src="assets/img/Abdullah-Ibn-Abbas.jpeg"
+                                id="citation-img" alt="..." />
+                            <div class="fw-bold citation-nom">
+                                Abdullah Ibn Abbas
+                                <span class="fw-bold text-primary mx-1">/</span>
+                                <span class="text-black">
+                                    رضي الله عنه
+                                </span>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Blog preview section-->
-            <section>
-                <div class="vente-record">
-                    <div>
-                        <div class="text-center">
-                            <h2 class="fw-bolder">Nos ventes records</h2>
-                        </div>
-                        <div class="card-containainer-body">
-                            <div class="card__container swiper">
-                                <div class="card__content">
-                                    <div class="swiper-wrapper">
-                                        <article class="card__article swiper-slide animate-on-scroll animate-on-scroll--card">
-                                            <div class="card__image">
-                                                <img loading="lazy" src="assets/img/carte1-avant.webp" alt="image" class="card__img">
-                                                <div class="card__shadow"></div>
-                                            </div>
-                                            <div class="card__data">
-                                            <h3 class="card__name">Kell Dawx</h3>
-                                            <p class="card__description">
-                                                Passionate about development and design, 
-                                                I carry out projects at the request of users.
-                                            </p>
-                                            <a href="#" class="card__button">View More</a>
-                                            </div>
-                                        </article>
-                            
-                                        <article class="card__article swiper-slide"animate-on-scroll animate-on-scroll--cta>
-                                            <div class="card__image">
-                                            <img loading="lazy" src="assets/img/carte2-avant.webp" alt="image" class="card__img">
-                                            <div class="card__shadow"></div>
-                                            </div>
-                            
-                                            <div class="card__data">
-                                            <h3 class="card__name">Lotw Fox</h3>
-                                            <p class="card__description">
-                                                Passionate about development and design, 
-                                                I carry out projects at the request of users.
-                                            </p>
-                            
-                                            <a href="#" class="card__button">View More</a>
-                                            </div>
-                                        </article>
-                                        
-                                        <article class="card__article swiper-slide animate-on-scroll animate-on-scroll--cta">
-                                            <div class="card__image">
-                                            <img loading="lazy" src="assets/img/carte3-avant.webp" alt="image" class="card__img">
-                                            <div class="card__shadow"></div>
-                                            </div>
-                            
-                                            <div class="card__data">
-                                            <h3 class="card__name">Sara Mit</h3>
-                                            <p class="card__description">
-                                                Passionate about development and design, 
-                                                I carry out projects at the request of users.
-                                            </p>
-                            
-                                            <a href="#" class="card__button">View More</a>
-                                            </div>
-                                        </article>
-                                          
-                                        <article class="card__article swiper-slide animate-on-scroll animate-on-scroll--cta">
-                                            <div class="card__image">
-                                            <img loading="lazy" src="assets/img/carte4-avant.webp" alt="image" class="card__img">
-                                            <div class="card__shadow"></div>
-                                            </div>
-                            
-                                            <div class="card__data">
-                                            <h3 class="card__name">Jenny Wert</h3>
-                                            <p class="card__description">
-                                                Passionate about development and design, 
-                                                I carry out projects at the request of users.
-                                            </p>
-                                            <a href="#" class="card__button">View More</a>
-                                            </div>
-                                        </article>
-                    
-                                        <article class="card__article swiper-slide animate-on-scroll animate-on-scroll--cta">
-                                            <div class="card__image">
-                                            <img loading="lazy" src="assets/img/carte3.webp" alt="image" class="card__img">
-                                            <div class="card__shadow"></div>
-                                            </div>
-                            
-                                            <div class="card__data">
-                                            <h3 class="card__name">Lexa Kin</h3>
-                                            <p class="card__description">
-                                                Passionate about development and design, 
-                                                I carry out projects at the request of users.
-                                            </p>
-                            
-                                            <a href="#" class="card__button">View More</a>
-                                            </div>
-                                        </article>
-                                        
+        </div>
+    </div>
+    <!-- Blog preview section-->
+    <section>
+        <div class="vente-record">
+            <div>
+                <div class="text-center">
+                    <h2 class="fw-bolder">Nos ventes records</h2>
+                </div>
+                <div class="card-containainer-body">
+                    <div class="card__container swiper">
+                        <div class="card__content">
+                            <div class="swiper-wrapper">
+                                <article class="card__article swiper-slide animate-on-scroll animate-on-scroll--card">
+                                    <div class="card__image">
+                                        <img loading="lazy" src="assets/img/carte1-avant.webp" alt="image"
+                                            class="card__img">
+                                        <div class="card__shadow"></div>
                                     </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Navigation buttons -->
-                            <div class="swiper-button-next">
-                                <i class="ri-arrow-right-s-line"></i>
-                            </div>
-                            
-                            <div class="swiper-button-prev">
-                                <i class="ri-arrow-left-s-line"></i>
-                            </div>
-                
-                            <!-- Pagination -->
-                            <div class="swiper-pagination"></div>
+                                    <div class="card__data">
+                                        <h3 class="card__name">Kell Dawx</h3>
+                                        <p class="card__description">
+                                            Passionate about development and design,
+                                            I carry out projects at the request of users.
+                                        </p>
+                                        <a href="#" class="card__button">View More</a>
+                                    </div>
+                                </article>
+
+                                <article class="card__article swiper-slide" animate-on-scroll animate-on-scroll--cta>
+                                    <div class="card__image">
+                                        <img loading="lazy" src="assets/img/carte2-avant.webp" alt="image"
+                                            class="card__img">
+                                        <div class="card__shadow"></div>
+                                    </div>
+
+                                    <div class="card__data">
+                                        <h3 class="card__name">Lotw Fox</h3>
+                                        <p class="card__description">
+                                            Passionate about development and design,
+                                            I carry out projects at the request of users.
+                                        </p>
+
+                                        <a href="#" class="card__button">View More</a>
+                                    </div>
+                                </article>
+
+                                <article class="card__article swiper-slide animate-on-scroll animate-on-scroll--cta">
+                                    <div class="card__image">
+                                        <img loading="lazy" src="assets/img/carte3-avant.webp" alt="image"
+                                            class="card__img">
+                                        <div class="card__shadow"></div>
+                                    </div>
+
+                                    <div class="card__data">
+                                        <h3 class="card__name">Sara Mit</h3>
+                                        <p class="card__description">
+                                            Passionate about development and design,
+                                            I carry out projects at the request of users.
+                                        </p>
+
+                                        <a href="#" class="card__button">View More</a>
+                                    </div>
+                                </article>
+
+                                <article class="card__article swiper-slide animate-on-scroll animate-on-scroll--cta">
+                                    <div class="card__image">
+                                        <img loading="lazy" src="assets/img/carte4-avant.webp" alt="image"
+                                            class="card__img">
+                                        <div class="card__shadow"></div>
+                                    </div>
+
+                                    <div class="card__data">
+                                        <h3 class="card__name">Jenny Wert</h3>
+                                        <p class="card__description">
+                                            Passionate about development and design,
+                                            I carry out projects at the request of users.
+                                        </p>
+                                        <a href="#" class="card__button">View More</a>
+                                    </div>
+                                </article>
+
+                                <article class="card__article swiper-slide animate-on-scroll animate-on-scroll--cta">
+                                    <div class="card__image">
+                                        <img loading="lazy" src="assets/img/carte3.webp" alt="image" class="card__img">
+                                        <div class="card__shadow"></div>
+                                    </div>
+
+                                    <div class="card__data">
+                                        <h3 class="card__name">Lexa Kin</h3>
+                                        <p class="card__description">
+                                            Passionate about development and design,
+                                            I carry out projects at the request of users.
+                                        </p>
+
+                                        <a href="#" class="card__button">View More</a>
+                                    </div>
+                                </article>
+
                             </div>
                         </div>
                     </div>
 
-                    <div class="container ">
-                        <div class="video-container position-relative rounded-4 overflow-hidden" style="padding-top: 56.25%;"> <!-- 16:9 Aspect Ratio -->
-                          <!-- Image figée en fond -->
-                          <img loading="lazy" src="assets/img/ramadan-planner.webp" alt="Image de fond" class="video-thumbnail position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;" />
-                          
-                          <!-- Bouton Play avec animation -->
-                          <div class="play-overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center bg-dark bg-opacity-50">
-                            <button class="play-button bg-transparent border-0 text-white animate-on-scroll animate-on-scroll--cta">
-                              
-                                <img loading="lazy" src="assets/play-fill.svg" alt="" class="play-icon fs-1">
+                    <!-- Navigation buttons -->
+                    <div class="swiper-button-next">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
 
-                              <span class="wave-animation position-absolute top-50 start-50 translate-middle"></span> <!-- Animation d'onde -->
-                            </button>
-                            <p class="instruction-text text-white mt-3 animate-on-scroll animate-on-scroll--cta">Guide d'utilisation du Ramadan Planner Qalbeen</p>
-                          </div>
-                      
-                          <!-- Vidéo YouTube -->
-                          <iframe class="video position-absolute top-0 start-0 w-100 h-100" src="https://www.youtube.com/embed/h7y1A56oabc?enablejsapi=1" title="Vidéo privée : GUIDE d'utilisation du ramadan planner" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-                      </div>
-                </div>
-                <div class="flou"></div>
-            </section>
-            <section class="contenu-vendre ">
-                <div class="">
-                    <div class="container px-4 px-lg-5 mt-4">
-                        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                            <div class="col mb-5 animate-on-scroll animate-on-scroll--card">
-                                <div class="card h-100">
-                                    <!-- Product image-->
-                                    <img loading="lazy" class="card-img-top" src="assets/img/carte1.webp" alt="..." />
-                                    <!-- Product details-->
-                                    <div class="card-body p-4">
-                                        <div class="text-center">
-                                            <!-- Product name-->
-                                            <h5 class="fw-bolder">Fancy Product</h5>
-                                            <!-- Product price-->
-                                            $40.00 - $80.00
-                                        </div>
-                                    </div>
-                                    <!-- Product actions-->
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ajouter</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col mb-5 animate-on-scroll animate-on-scroll--card">
-                                <div class="card h-100">
-                                    <!-- solde badge-->
-                                    <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">solde</div>
-                                    <!-- Product image-->
-                                    <img loading="lazy" class="card-img-top" src="assets/img/carte2.webp" alt="..." />
-                                    <!-- Product details-->
-                                    <div class="card-body p-4">
-                                        <div class="text-center">
-                                            <!-- Product name-->
-                                            <h5 class="fw-bolder">Special Item</h5>
-                                            <!-- Product reviews-->
-                                            <div class="d-flex justify-content-center small text-warning mb-2">
-                                                <div class="bi-star-fill"></div>
-                                                <div class="bi-star-fill"></div>
-                                                <div class="bi-star-fill"></div>
-                                                <div class="bi-star-fill"></div>
-                                                <div class="bi-star-fill"></div>
-                                            </div>
-                                            <!-- Product price-->
-                                            <span class="text-muted text-decoration-line-through">$20.00</span>
-                                            $18.00
-                                        </div>
-                                    </div>
-                                    <!-- Product actions-->
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ajouter</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col mb-5 animate-on-scroll animate-on-scroll--card">
-                                <div class="card h-100">
-                                    <!-- solde badge-->
-                                    <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">solde</div>
-                                    <!-- Product image-->
-                                    <img loading="lazy" class="card-img-top" src="assets/img/carte3.webp" alt="..." />
-                                    <!-- Product details-->
-                                    <div class="card-body p-4">
-                                        <div class="text-center">
-                                            <!-- Product name-->
-                                            <h5 class="fw-bolder">solde Item</h5>
-                                            <!-- Product price-->
-                                            <span class="text-muted text-decoration-line-through">$50.00</span>
-                                            $25.00
-                                        </div>
-                                    </div>
-                                    <!-- Product actions-->
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ajouter</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col mb-5 animate-on-scroll animate-on-scroll--card">
-                                <div class="card h-100">
-                                    <!-- Product image-->
-                                    <img loading="lazy" class="card-img-top" src="assets/img/carte4-avant.webp" alt="..." />
-                                    <!-- Product details-->
-                                    <div class="card-body p-4">
-                                        <div class="text-center">
-                                            <!-- Product name-->
-                                            <h5 class="fw-bolder">Popular Item</h5>
-                                            <!-- Product reviews-->
-                                            <div class="d-flex justify-content-center small text-warning mb-2">
-                                                <div class="bi-star-fill"></div>
-                                                <div class="bi-star-fill"></div>
-                                                <div class="bi-star-fill"></div>
-                                                <div class="bi-star-fill"></div>
-                                                <div class="bi-star-fill"></div>
-                                            </div>
-                                            <!-- Product price-->
-                                            $40.00
-                                        </div>
-                                    </div>
-                                    <!-- Product actions-->
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ajouter</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col mb-5 animate-on-scroll animate-on-scroll--card">
-                                <div class="card h-100">
-                                    <!-- solde badge-->
-                                    <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">solde</div>
-                                    <!-- Product image-->
-                                    <img loading="lazy" class="card-img-top" src="assets/img/carte1-avant.webp" alt="..." />
-                                    <!-- Product details-->
-                                    <div class="card-body p-4">
-                                        <div class="text-center">
-                                            <!-- Product name-->
-                                            <h5 class="fw-bolder">solde Item</h5>
-                                            <!-- Product price-->
-                                            <span class="text-muted text-decoration-line-through">$50.00</span>
-                                            $25.00
-                                        </div>
-                                    </div>
-                                    <!-- Product actions-->
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ajouter</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col mb-5 animate-on-scroll animate-on-scroll--card">
-                                <div class="card h-100">
-                                    <!-- Product image-->
-                                    <img loading="lazy" class="card-img-top" src="assets/img/carte2-avant.webp" alt="..." />
-                                    <!-- Product details-->
-                                    <div class="card-body p-4">
-                                        <div class="text-center">
-                                            <!-- Product name-->
-                                            <h5 class="fw-bolder">Fancy Product</h5>
-                                            <!-- Product price-->
-                                            $120.00 - $280.00
-                                        </div>
-                                    </div>
-                                    <!-- Product actions-->
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ajouter</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col mb-5 animate-on-scroll animate-on-scroll--card">
-                                <div class="card h-100">
-                                    <!-- solde badge-->
-                                    <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">solde</div>
-                                    <!-- Product image-->
-                                    <img loading="lazy" class="card-img-top" src="assets/img/carte3-avant.webp" alt="..." />
-                                    <!-- Product details-->
-                                    <div class="card-body p-4">
-                                        <div class="text-center">
-                                            <!-- Product name-->
-                                            <h5 class="fw-bolder">Special Item</h5>
-                                            <!-- Product reviews-->
-                                            <div class="d-flex justify-content-center small text-warning mb-2">
-                                                <div class="bi-star-fill"></div>
-                                                <div class="bi-star-fill"></div>
-                                                <div class="bi-star-fill"></div>
-                                                <div class="bi-star-fill"></div>
-                                                <div class="bi-star-fill"></div>
-                                            </div>
-                                            <!-- Product price-->
-                                            <span class="text-muted text-decoration-line-through">$20.00</span>
-                                            $18.00
-                                        </div>
-                                    </div>
-                                    <!-- Product actions-->
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ajouter</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col mb-5 animate-on-scroll animate-on-scroll--card">
-                                <div class="card h-100">
-                                    <!-- Product image-->
-                                    <img loading="lazy" class="card-img-top" src="assets/img/365.webp" alt="..." />
-                                    <!-- Product details-->
-                                    <div class="card-body p-4">
-                                        <div class="text-center">
-                                            <!-- Product name-->
-                                            <h5 class="fw-bolder">Popular Item</h5>
-                                            <!-- Product reviews-->
-                                            <div class="d-flex justify-content-center small text-warning mb-2">
-                                                <div class="bi-star-fill"></div>
-                                                <div class="bi-star-fill"></div>
-                                                <div class="bi-star-fill"></div>
-                                                <div class="bi-star-fill"></div>
-                                                <div class="bi-star-fill"></div>
-                                            </div>
-                                            <!-- Product price-->
-                                            $40.00
-                                        </div>
-                                    </div>
-                                    <!-- Product actions-->
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Ajouter</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="swiper-button-prev">
+                        <i class="ri-arrow-left-s-line"></i>
                     </div>
+
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
                 </div>
-                <section class="bg-white">
-                    <div id="tranding" class="body-style">
-                      <div class="container-style">
-                        <h3 class="text-center section-subheading">- Fait nous confiance -</h3>
-                        <h1 class="text-center section-heading">Reveille ton style</h1>
-                      </div>
-                      <div class="container-style">
-                        <div class="swiper tranding-slider">
-                          <div class="swiper-wrapper">
-                            <!-- Slide-start -->
-                            <div class="swiper-slide tranding-slide">
-                              <div class="tranding-slide-img">
-                                <img loading="lazy" src="assets/img/styl-1.webp" alt="Tranding">
-                              </div>
-                              <div class="tranding-slide-content">
-                                <h1 class="style-price">$20</h1>
-                                <div class="tranding-slide-content-bottom">
-                                  <h3 class="style-rating">
-                                    <span>4.5</span>
-                                    <div class="rating">
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                    </div>
-                                  </h3>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- Slide-end -->
-                            <!-- Slide-start -->
-                            <div class="swiper-slide tranding-slide">
-                              <div class="tranding-slide-img">
-                                <img loading="lazy" src="assets/img/style-2.webp" alt="Tranding">
-                              </div>
-                              <div class="tranding-slide-content">
-                                <h1 class="style-price">$20</h1>
-                                <div class="tranding-slide-content-bottom">
-                                  <h3 class="style-rating">
-                                    <span>4.5</span>
-                                    <div class="rating">
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                    </div>
-                                  </h3>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- Slide-end -->
-                            <!-- Slide-start -->
-                            <div class="swiper-slide tranding-slide">
-                              <div class="tranding-slide-img">
-                                <img loading="lazy" src="assets/img/style-3.webp" alt="Tranding">
-                              </div>
-                              <div class="tranding-slide-content">
-                                <h1 class="style-price">$40</h1>
-                                <div class="tranding-slide-content-bottom">
-                                  <h3 class="style-rating">
-                                    <span>4.5</span>
-                                    <div class="rating">
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                    </div>
-                                  </h3>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- Slide-end -->
-                            <!-- Slide-start -->
-                            <div class="swiper-slide tranding-slide">
-                              <div class="tranding-slide-img">
-                                <img loading="lazy" src="assets/img/style-4.webp" alt="Tranding">
-                              </div>
-                              <div class="tranding-slide-content">
-                                <h1 class="style-price">$15</h1>
-                                <div class="tranding-slide-content-bottom">
-                                  <h3 class="style-rating">
-                                    <span>4.5</span>
-                                    <div class="rating">
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                    </div>
-                                  </h3>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- Slide-end -->
-                            <!-- Slide-start -->
-                            <div class="swiper-slide tranding-slide">
-                              <div class="tranding-slide-img">
-                                <img loading="lazy" src="assets/img/style-5.webp" alt="Tranding">
-                              </div>
-                              <div class="tranding-slide-content">
-                                <h1 class="style-price">$15</h1>
-                                <div class="tranding-slide-content-bottom">
-                                  <h3 class="style-rating">
-                                    <span>4.5</span>
-                                    <div class="rating">
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                    </div>
-                                  </h3>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- Slide-end -->
-                            <!-- Slide-start -->
-                            <div class="swiper-slide tranding-slide">
-                              <div class="tranding-slide-img">
-                                <img loading="lazy" src="assets/img/style-6.webp" alt="Tranding">
-                              </div>
-                              <div class="tranding-slide-content">
-                                <h1 class="style-price">$20</h1>
-                                <div class="tranding-slide-content-bottom">
-                                  <h3 class="style-rating">
-                                    <span>4.5</span>
-                                    <div class="rating">
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                    </div>
-                                  </h3>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- Slide-end -->
-                            <!-- Slide-start -->
-                            <div class="swiper-slide tranding-slide">
-                              <div class="tranding-slide-img">
-                                <img loading="lazy" src="assets/img/style-7.webp" alt="Tranding">
-                              </div>
-                              <div class="tranding-slide-content">
-                                <h1 class="style-price">$8</h1>
-                                <div class="tranding-slide-content-bottom">
-                                  <h3 class="style-rating">
-                                    <span>4.5</span>
-                                    <div class="rating">
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                      <ion-icon name="star"></ion-icon>
-                                    </div>
-                                  </h3>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- Slide-end -->
-                          </div>
-                          <!-- <div class="tranding-slider-control">
-                            <div class="swiper-button-prev slider-arrow">
-                              <ion-icon name="arrow-back-outline"></ion-icon>
-                            </div>
-                            <div class="swiper-button-next slider-arrow">
-                              <ion-icon name="arrow-forward-outline"></ion-icon>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                          </div> -->
-                        </div>
-                      </div>
-                    </div>
-                </section>
-            </section>
-            <section>
-                <div class="container px-5 my-5 features">
-                    <div class="row">
-                        <div class="col-md-6 order-1 order-md-1 mb-4 mb-md-0 animate-on-scroll animate-on-scroll--cta">
-                            <div class="col-lg-7 mb-5 mb-lg-0 ">
-                                <div class="text-center  text-md-start pub mt-4">
-                                    <h2 class=" fw-bold fs-1">Pour decouvrir plus de nos articles </h2>
-                                    <p class="lead mb-4">visitez notre boutique en ligne</p>
-                                    <a href="boutique.html" class="text-white">
-                                        <span class="promo rounded-4 px-4 py-3">Boutique</span>
-                                    </a>
-                                </div>
-                    
-                            </div>
-                        </div>
-                        <div class="col-md-6 order-2 order-md-2  animate-on-scroll animate-on-scroll--card">
-                            <img loading="lazy" src="assets/img/bg-boutique-plus.jpg" alt="" class="img-fluid rounded-3 shadow">
-                        </div>
-                    </div>
+            </div>
+        </div>
+
+        <div class="container ">
+            <div class="video-container position-relative rounded-4 overflow-hidden" style="padding-top: 56.25%;">
+                <!-- 16:9 Aspect Ratio -->
+                <!-- Image figée en fond -->
+                <img loading="lazy" src="assets/img/ramadan-planner.webp" alt="Image de fond"
+                    class="video-thumbnail position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover;" />
+
+                <!-- Bouton Play avec animation -->
+                <div
+                    class="play-overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center bg-dark bg-opacity-50">
+                    <button
+                        class="play-button bg-transparent border-0 text-white animate-on-scroll animate-on-scroll--cta">
+
+                        <img loading="lazy" src="assets/play-fill.svg" alt="" class="play-icon fs-1">
+
+                        <span class="wave-animation position-absolute top-50 start-50 translate-middle"></span>
+                        <!-- Animation d'onde -->
+                    </button>
+                    <p class="instruction-text text-white mt-3 animate-on-scroll animate-on-scroll--cta">Guide
+                        d'utilisation du Ramadan Planner Qalbeen</p>
                 </div>
-            </section>
-            
-        
-        <!-- Footer-->
-        <footer class="py-4 mt-auto">
-            <div class="container px-5 footer">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0 ">CouraAstou &copy; Tout droit reserve</div></div>
-                    <div class="col-auto">
-                        <a class=" small" href="#!">Privacy</a>
-                        <span class=" mx-1">&middot;</span>
-                        <a class="small" href="#!">Terms</a>
-                        <span class=" mx-1">&middot;</span>
-                        <a class="small" href="#!">Contact</a>
+
+                <!-- Vidéo YouTube -->
+                <iframe class="video position-absolute top-0 start-0 w-100 h-100"
+                    src="https://www.youtube.com/embed/h7y1A56oabc?enablejsapi=1"
+                    title="Vidéo privée : GUIDE d'utilisation du ramadan planner" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+        </div>
+        <div class="flou"></div>
+    </section>
+    <section class="contenu-vendre ">
+        <div class="">
+            <div class="container px-4 px-lg-5 mt-4">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center animate-on-scroll animate-on-scroll--cta "
+                    id="products-container">
+                    <!-- Les produits seront injectés ici via JS -->
+                </div>
+            </div>
+        </div>
+        <section class="bg-white">
+            <div id="tranding" class="body-style">
+                <div class="container-style">
+                    <h3 class="text-center section-subheading">- Fait nous confiance -</h3>
+                    <h1 class="text-center section-heading">Reveille ton style</h1>
+                </div>
+                <div class="container-style">
+                    <div class="swiper tranding-slider">
+                        <div class="swiper-wrapper">
+                            <!-- Slide-start -->
+                            <div class="swiper-slide tranding-slide">
+                                <div class="tranding-slide-img">
+                                    <img loading="lazy" src="assets/img/styl-1.webp" alt="Tranding">
+                                </div>
+                                <div class="tranding-slide-content">
+                                    <h1 class="style-price">$20</h1>
+                                    <div class="tranding-slide-content-bottom">
+                                        <h3 class="style-rating">
+                                            <span>4.5</span>
+                                            <div class="rating">
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                            </div>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide-end -->
+                            <!-- Slide-start -->
+                            <div class="swiper-slide tranding-slide">
+                                <div class="tranding-slide-img">
+                                    <img loading="lazy" src="assets/img/style-2.webp" alt="Tranding">
+                                </div>
+                                <div class="tranding-slide-content">
+                                    <h1 class="style-price">$20</h1>
+                                    <div class="tranding-slide-content-bottom">
+                                        <h3 class="style-rating">
+                                            <span>4.5</span>
+                                            <div class="rating">
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                            </div>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide-end -->
+                            <!-- Slide-start -->
+                            <div class="swiper-slide tranding-slide">
+                                <div class="tranding-slide-img">
+                                    <img loading="lazy" src="assets/img/style-3.webp" alt="Tranding">
+                                </div>
+                                <div class="tranding-slide-content">
+                                    <h1 class="style-price">$40</h1>
+                                    <div class="tranding-slide-content-bottom">
+                                        <h3 class="style-rating">
+                                            <span>4.5</span>
+                                            <div class="rating">
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                            </div>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide-end -->
+                            <!-- Slide-start -->
+                            <div class="swiper-slide tranding-slide">
+                                <div class="tranding-slide-img">
+                                    <img loading="lazy" src="assets/img/style-4.webp" alt="Tranding">
+                                </div>
+                                <div class="tranding-slide-content">
+                                    <h1 class="style-price">$15</h1>
+                                    <div class="tranding-slide-content-bottom">
+                                        <h3 class="style-rating">
+                                            <span>4.5</span>
+                                            <div class="rating">
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                            </div>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide-end -->
+                            <!-- Slide-start -->
+                            <div class="swiper-slide tranding-slide">
+                                <div class="tranding-slide-img">
+                                    <img loading="lazy" src="assets/img/style-5.webp" alt="Tranding">
+                                </div>
+                                <div class="tranding-slide-content">
+                                    <h1 class="style-price">$15</h1>
+                                    <div class="tranding-slide-content-bottom">
+                                        <h3 class="style-rating">
+                                            <span>4.5</span>
+                                            <div class="rating">
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                            </div>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide-end -->
+                            <!-- Slide-start -->
+                            <div class="swiper-slide tranding-slide">
+                                <div class="tranding-slide-img">
+                                    <img loading="lazy" src="assets/img/style-6.webp" alt="Tranding">
+                                </div>
+                                <div class="tranding-slide-content">
+                                    <h1 class="style-price">$20</h1>
+                                    <div class="tranding-slide-content-bottom">
+                                        <h3 class="style-rating">
+                                            <span>4.5</span>
+                                            <div class="rating">
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                            </div>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide-end -->
+                            <!-- Slide-start -->
+                            <div class="swiper-slide tranding-slide">
+                                <div class="tranding-slide-img">
+                                    <img loading="lazy" src="assets/img/style-7.webp" alt="Tranding">
+                                </div>
+                                <div class="tranding-slide-content">
+                                    <h1 class="style-price">$8</h1>
+                                    <div class="tranding-slide-content-bottom">
+                                        <h3 class="style-rating">
+                                            <span>4.5</span>
+                                            <div class="rating">
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                            </div>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide-end -->
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="position-fixed bottom-0 end-0 p-3 icons" style="z-index: 11 ">
-                <div class="d-flex flex-column bg-tranparent">
-                    <a href="#" class="btn  btn-floating m-1"><img loading="lazy" src="assets/facebook.png" alt=""></a>
-                    <a href="#" class="btn  btn-floating m-1 "><img loading="lazy" src="assets/instagram.png" alt=""></a>
-                    <a href="#" class="btn  btn-floating m-1 "><img loading="lazy" src="assets/tiktok.svg" alt=""></a>
-                    <a href="#" class="btn  btn-floating m-1 "><img loading="lazy" src="assets/whatsapp.png" alt=""></a>
+        </section>
+    </section>
+    <section>
+        <div class="container px-5 my-5 features">
+            <div class="row">
+                <div class="col-md-6 order-1 order-md-1 mb-4 mb-md-0 animate-on-scroll animate-on-scroll--cta">
+                    <div class="col-lg-7 mb-5 mb-lg-0 ">
+                        <div class="text-center  text-md-start pub mt-4">
+                            <h2 class=" fw-bold fs-1">Pour decouvrir plus de nos articles </h2>
+                            <p class="lead mb-4">visitez notre boutique en ligne</p>
+                            <a href="boutique.html" class="text-white">
+                                <span class="promo rounded-4 px-4 py-3">Boutique</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6 order-2 order-md-2  animate-on-scroll animate-on-scroll--card">
+                    <img loading="lazy" src="assets/img/bg-boutique-plus.jpg" alt="" class="img-fluid rounded-3 shadow">
                 </div>
             </div>
-        </footer>
-        <script src="js/liendb.js"></script>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/swiper-bundle.min.js"></script>
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-        <script src="js/slider-style.js"></script>
-        <script src="js/scripts.js"></script>
-        <script src="js/panier.js"></script>
-        <script src="js/scroll.js"></script>
-        <script src="js/lazy-loading.js"></script>
-    </body>
+        </div>
+    </section>
+
+
+    <!-- Footer-->
+    <footer class="py-4 mt-auto">
+        <div class="container px-5 footer">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto">
+                    <div class="small m-0 ">CouraAstou &copy; Tout droit reserve</div>
+                </div>
+                <div class="col-auto">
+                    <a class=" small" href="#!">Privacy</a>
+                    <span class=" mx-1">&middot;</span>
+                    <a class="small" href="#!">Terms</a>
+                    <span class=" mx-1">&middot;</span>
+                    <a class="small" href="#!">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="position-fixed bottom-0 end-0 p-3 icons" style="z-index: 11 ">
+            <div class="d-flex flex-column bg-tranparent">
+                <a href="#" class="btn  btn-floating m-1"><img loading="lazy" src="assets/facebook.png" alt=""></a>
+                <a href="#" class="btn  btn-floating m-1 "><img loading="lazy" src="assets/instagram.png" alt=""></a>
+                <a href="#" class="btn  btn-floating m-1 "><img loading="lazy" src="assets/tiktok.svg" alt=""></a>
+                <a href="#" class="btn  btn-floating m-1 "><img loading="lazy" src="assets/whatsapp.png" alt=""></a>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/swiper-bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="js/slider-style.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/panier.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/lazy-loading.js"></script>
+</body>
+
 </html>
-
-
